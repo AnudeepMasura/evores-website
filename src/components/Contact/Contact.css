@@ -1,0 +1,25 @@
+.contact{
+
+background:var(--black);
+
+color:white;
+
+}
+
+.contact h3{
+
+margin-top:30px;
+
+font-size:28px;
+
+color:var(--gold);
+
+font-weight:700;
+
+}
+
+.contact .text-block p{
+
+color:#a0a0a0;
+
+}

@@ -1,0 +1,13 @@
+.dark-section{
+
+background:var(--black);
+
+color:white;
+
+}
+
+.dark-section .text-block p{
+
+color:#a0a0a0;
+
+}

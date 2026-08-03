@@ -1,0 +1,20 @@
+:root{
+
+    --black:#050505;
+    --black-surface:#111111;
+
+    --white:#ffffff;
+    --white-surface:#f9f9f9;
+
+    --gold:#d4af37;
+    --gold-muted:#b5952f;
+
+    --gray:#666666;
+    --gray-light:#e5e5e5;
+    --gray-dark:#333333;
+
+    --container:1400px;
+
+    --transition:.3s ease;
+
+}

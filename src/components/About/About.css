@@ -1,0 +1,43 @@
+#about{
+
+    background:var(--white);
+
+}
+
+.section-title{
+
+    font-size:3rem;
+
+    font-weight:800;
+
+    margin-bottom:3rem;
+
+    line-height:1.1;
+
+    letter-spacing:-2px;
+
+}
+
+.section-title span{
+
+    color:var(--gold);
+
+}
+
+.text-block{
+
+    max-width:850px;
+
+}
+
+.text-block p{
+
+    font-size:1.2rem;
+
+    color:var(--gray);
+
+    line-height:1.8;
+
+    margin-bottom:25px;
+
+}

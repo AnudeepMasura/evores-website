@@ -1,0 +1,47 @@
+.hero{
+
+    min-height:100vh;
+
+    background:var(--black);
+
+    color:white;
+
+    display:flex;
+
+    align-items:center;
+
+    padding-top:80px;
+
+}
+
+.hero h1{
+
+    font-size:clamp(3rem,8vw,6rem);
+
+    line-height:1;
+
+    max-width:900px;
+
+    margin-bottom:30px;
+
+    letter-spacing:-4px;
+
+    font-weight:800;
+
+}
+
+.hero span{
+
+    color:var(--gold);
+
+}
+
+.hero p{
+
+    max-width:650px;
+
+    color:#999;
+
+    font-size:1.25rem;
+
+}
