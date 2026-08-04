@@ -2,22 +2,20 @@ function ProductCard({ product }) {
   return (
     <div className="product-card">
 
+      <div className="status-badge">
+        {product.status}
+      </div>
+
       <div className="product-meta">
 
         <div>
-
           <small>SECTOR</small>
-
           <h5>{product.sector}</h5>
-
         </div>
 
         <div>
-
           <small>MODEL</small>
-
           <h5>{product.model}</h5>
-
         </div>
 
       </div>
@@ -27,17 +25,16 @@ function ProductCard({ product }) {
         alt={product.title}
         className="product-image"
       />
+      <div className="status-badge">
+      {product.status}</div>
 
       <h3>{product.title}</h3>
 
       <p>{product.description}</p>
 
       <div className="buttons">
-
         <a href={product.website}>View Website</a>
-
         <a href="#">Learn More</a>
-
       </div>
 
     </div>
