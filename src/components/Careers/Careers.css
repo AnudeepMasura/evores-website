@@ -1,5 +1,43 @@
-#careers{
+#careers {
+    background: white;
+    padding: 6rem 5%;
+}
 
-background:white;
+#careers .text-block {
+    max-width: 700px;
+    margin-top: 25px;
+}
 
+#careers p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.career-btn {
+    display: inline-block;
+    background: var(--gold);
+    color: #000;
+    padding: 14px 30px;
+    border-radius: 6px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.career-btn:hover {
+    background: #000;
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    #careers {
+        padding: 4rem 5%;
+    }
+
+    .career-btn {
+        width: 100%;
+        text-align: center;
+    }
 }
