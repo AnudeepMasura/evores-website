@@ -1,43 +1,71 @@
-#about{
-
-    background:var(--white);
-
+.about-mission-section {
+    background: var(--white);
+    padding: 8rem 5%;
 }
 
-.section-title{
-
-    font-size:3rem;
-
-    font-weight:800;
-
-    margin-bottom:3rem;
-
-    line-height:1.1;
-
-    letter-spacing:-2px;
-
+.about-mission-grid {
+    display: grid;
+    grid-template-columns: 1fr 1px 1fr;
+    gap: 4rem;
+    align-items: start;
 }
 
-.section-title span{
-
-    color:var(--gold);
-
+.col-divider {
+    background: var(--gray-light);
+    height: 100%;
+    width: 1px;
+    align-self: stretch;
 }
 
-.text-block{
-
-    max-width:850px;
-
+.about-col, .mission-col {
+    scroll-margin-top: 100px;
 }
 
-.text-block p{
+.section-title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    line-height: 1.1;
+    letter-spacing: -2px;
+}
 
-    font-size:1.2rem;
+.section-title span {
+    color: var(--gold);
+}
 
-    color:var(--gray);
+.text-block {
+    max-width: 100%;
+}
 
-    line-height:1.8;
+.text-block p {
+    font-size: 1.15rem;
+    color: var(--gray);
+    line-height: 1.85;
+    margin-bottom: 20px;
+}
 
-    margin-bottom:25px;
+/* RESPONSIVE STACKING FOR MOBILE (UNDER 768px) */
+@media (max-width: 767px) {
+    .about-mission-section {
+        padding: 5rem 5%;
+    }
 
+    .about-mission-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .col-divider {
+        height: 1px;
+        width: 100%;
+    }
+
+    .section-title {
+        font-size: 2.2rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .text-block p {
+        font-size: 1.05rem;
+    }
 }

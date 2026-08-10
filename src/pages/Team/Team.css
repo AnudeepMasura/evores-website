@@ -1,0 +1,126 @@
+.team-page {
+    min-height: 100vh;
+    padding-top: 140px;
+    background: var(--black);
+    color: white;
+}
+
+.team-header {
+    margin-bottom: 70px;
+    max-width: 800px;
+}
+
+.team-badge {
+    display: inline-block;
+    color: var(--gold);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.team-header h1 {
+    font-size: clamp(3rem, 6vw, 4.5rem);
+    font-weight: 800;
+    margin-bottom: 20px;
+    letter-spacing: -2px;
+}
+
+.team-header h1 span {
+    color: var(--gold);
+}
+
+.team-header p {
+    color: #a0a0a0;
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+.team-gold-line {
+    width: 80px;
+    height: 3px;
+    background: var(--gold);
+    margin-top: 30px;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-bottom: 100px;
+}
+
+.team-card {
+    background: var(--black-surface);
+    border: 1px solid var(--gray-dark);
+    border-top: 3px solid var(--gold);
+    padding: 40px 30px;
+    transition: transform 0.35s ease, border-color 0.35s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--gold);
+}
+
+.team-card-badge {
+    color: var(--gold);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+
+.team-card h3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: white;
+}
+
+.team-card p {
+    color: #a0a0a0;
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+.team-cta {
+    background: rgba(218, 174, 45, 0.05);
+    border: 1px solid rgba(218, 174, 45, 0.2);
+    padding: 60px 40px;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 100px;
+}
+
+.team-cta h2 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+}
+
+.team-cta p {
+    color: #a0a0a0;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+.team-btn {
+    display: inline-block;
+    color: var(--gold);
+    border: 2px solid var(--gold);
+    padding: 14px 32px;
+    border-radius: 6px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    transition: 0.3s ease;
+}
+
+.team-btn:hover {
+    background: var(--gold);
+    color: black;
+}

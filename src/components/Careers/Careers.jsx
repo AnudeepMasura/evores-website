@@ -14,11 +14,8 @@ function Careers() {
             We are constantly seeking brilliant minds to join our corporate journey.
           </p>
 
-          <a
-            href="#"
-            className="career-btn"
-          >
-            Go to Careers
+         <a href="mailto:evorestechnologysocial@gmail.com" className="career-btn">
+            Get In Touch →
           </a>
         </div>
 

@@ -5,7 +5,6 @@ import products from "../../data/products";
 function Products() {
   return (
     <section id="products" className="products-section">
-
       <div className="container">
 
         <h2 className="section-title">
@@ -13,15 +12,15 @@ function Products() {
         </h2>
 
         <div className="products-grid">
-
           {products.map((product) => (
-            <ProductCard key={product.id} product={product} />
+            <ProductCard
+              key={product.id}
+              product={product}
+            />
           ))}
-
         </div>
 
       </div>
-
     </section>
   );
 }

@@ -1,25 +1,48 @@
+import { useEffect } from "react";
+import { Routes, Route, useLocation } from "react-router-dom";
+
+import Home from "./Home";
+import ProductDetails from "./pages/ProductDetails/ProductDetails";
 import Navbar from "./components/Navbar/Navbar";
-import Hero from "./components/Hero/Hero";
-import About from "./components/About/About";
-import Products from "./components/Products/Products";
-import Mission from "./components/Mission/Mission";
-import Team from "./components/Team/Team";
-import Careers from "./components/Careers/Careers";
-import Contact from "./components/Contact/Contact";
-import Footer from "./components/Footer/Footer";
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+  }, [pathname]);
+
+  return null;
+}
 
 function App() {
   return (
     <>
+      <ScrollToTop />
+      {/* Navbar visible on every page */}
       <Navbar />
-      <Hero />
-      <About />
-      <Products />
-      <Mission />
-      <Team />
-      <Careers />
-      <Contact />
-      <Footer />
+
+      <Routes>
+
+        {/* Home page */}
+        <Route
+          path="/"
+          element={<Home />}
+        />
+
+        {/* Product details page */}
+        <Route
+          path="/products/:slug"
+          element={<ProductDetails />}
+        />
+
+        {/* Sub-product details fallback route */}
+        <Route
+          path="/products/:slug/:subslug"
+          element={<ProductDetails />}
+        />
+
+      </Routes>
     </>
   );
 }

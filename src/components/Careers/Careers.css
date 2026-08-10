@@ -1,43 +1,32 @@
 #careers {
-    background: white;
-    padding: 6rem 5%;
+    background: var(--white);
+    color: var(--black);
 }
 
-#careers .text-block {
-    max-width: 700px;
-    margin-top: 25px;
+#careers .section-title {
+    color: var(--black);
 }
 
-#careers p {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: #555;
-    margin-bottom: 30px;
+#careers .section-title span {
+    color: var(--gold);
 }
 
-.career-btn {
+#careers .text-block p {
+    color: var(--gray);
+}
+
+#careers .career-btn {
     display: inline-block;
-    background: var(--gold);
-    color: #000;
+    margin-top: 30px;
     padding: 14px 30px;
-    border-radius: 6px;
+    background: var(--gold);
+    color: var(--black);
     font-weight: 700;
-    text-decoration: none;
-    transition: 0.3s ease;
+    border-radius: 6px;
+    transition: .3s;
 }
 
-.career-btn:hover {
-    background: #000;
-    color: #fff;
-}
-
-@media (max-width: 768px) {
-    #careers {
-        padding: 4rem 5%;
-    }
-
-    .career-btn {
-        width: 100%;
-        text-align: center;
-    }
+#careers .career-btn:hover {
+    background: var(--black);
+    color: var(--white);
 }

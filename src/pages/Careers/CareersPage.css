@@ -1,0 +1,123 @@
+.careers-page {
+    min-height: 100vh;
+    padding-top: 140px;
+    background: var(--black);
+    color: white;
+}
+
+.careers-header {
+    margin-bottom: 70px;
+    max-width: 850px;
+}
+
+.careers-badge {
+    display: inline-block;
+    color: var(--gold);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.careers-header h1 {
+    font-size: clamp(3rem, 6vw, 4.5rem);
+    font-weight: 800;
+    margin-bottom: 20px;
+    letter-spacing: -2px;
+}
+
+.careers-header h1 span {
+    color: var(--gold);
+}
+
+.careers-header p {
+    color: #a0a0a0;
+    font-size: 1.2rem;
+    line-height: 1.8;
+}
+
+.careers-gold-line {
+    width: 80px;
+    height: 3px;
+    background: var(--gold);
+    margin-top: 30px;
+}
+
+.positions-list {
+    margin-bottom: 100px;
+}
+
+.positions-list h2 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 30px;
+}
+
+.positions-list h2 span {
+    color: var(--gold);
+}
+
+.position-card {
+    background: var(--black-surface);
+    border: 1px solid var(--gray-dark);
+    border-left: 4px solid var(--gold);
+    padding: 30px 35px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.position-card:hover {
+    transform: translateX(6px);
+    border-color: var(--gold);
+}
+
+.position-info h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: white;
+}
+
+.position-tags {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.position-tags span {
+    background: rgba(218, 174, 45, 0.1);
+    color: var(--gold);
+    border: 1px solid rgba(218, 174, 45, 0.2);
+    font-size: 0.85rem;
+    padding: 4px 12px;
+    border-radius: 20px;
+}
+
+.apply-btn {
+    color: var(--gold);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    border-bottom: 2px solid var(--gold);
+    padding-bottom: 3px;
+    transition: 0.3s ease;
+}
+
+.apply-btn:hover {
+    color: white;
+    border-color: white;
+}
+
+@media (max-width: 768px) {
+    .position-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

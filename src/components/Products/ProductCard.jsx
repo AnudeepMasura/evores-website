@@ -1,23 +1,30 @@
+import { Link } from "react-router-dom";
+
 function ProductCard({ product }) {
   return (
-    <div className="product-card">
-
-      <div className="status-badge">
-        {product.status}
-      </div>
-
+    <div
+      className={`product-card ${
+        product.featured ? "featured-card" : ""
+      }`}
+    >
       <div className="product-meta">
+        <div className="sector-row">
+          <div>
+            <small>SECTOR</small>
+            <h5>{product.sector}</h5>
+          </div>
 
-        <div>
-          <small>SECTOR</small>
-          <h5>{product.sector}</h5>
+          {product.upcoming && (
+            <span className="upcoming-badge">
+              Upcoming
+            </span>
+          )}
         </div>
 
-        <div>
+        <div className="model-row">
           <small>MODEL</small>
           <h5>{product.model}</h5>
         </div>
-
       </div>
 
       <img
@@ -25,18 +32,16 @@ function ProductCard({ product }) {
         alt={product.title}
         className="product-image"
       />
-      <div className="status-badge">
-      {product.status}</div>
 
       <h3>{product.title}</h3>
 
       <p>{product.description}</p>
 
       <div className="buttons">
-        <a href={product.website}>View Website</a>
-        <a href="#">Learn More</a>
+        <Link to={`/products/${product.slug}`}>
+          Learn More →
+        </Link>
       </div>
-
     </div>
   );
 }
