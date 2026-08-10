@@ -1,30 +1,34 @@
 /* =========================================================
-   EVORES PRODUCT DETAILS
-   BLACK + WHITE + GOLD ANIMATED THEME
+   EVORES PRODUCT DETAILS - PRESENTATION SLIDE DECK THEME
+   BLACK + GOLD HIGH-TECH INTERACTIVE PRESENTATION TEMPLATE
    ========================================================= */
 
-.product-details-page {
-    background: #050505;
+.product-details-page.deck-presentation-mode {
+    background: #040405;
     color: #FFFFFF;
     min-height: 100vh;
+    overflow-x: hidden;
 }
 
 .product-details {
     position: relative;
-    padding: 140px 5% 100px;
+    padding: 135px 4% 60px;
     background:
         radial-gradient(
-            circle at 50% 0%,
-            rgba(218, 174, 45, 0.12),
-            transparent 35%
+            circle at 50% 10%,
+            rgba(218, 174, 45, 0.14),
+            transparent 45%
         ),
         radial-gradient(
-            circle at 10% 80%,
-            rgba(218, 174, 45, 0.06),
-            transparent 30%
+            circle at 85% 85%,
+            rgba(218, 174, 45, 0.07),
+            transparent 35%
         ),
-        #050505;
-    overflow: hidden;
+        #040405;
+    min-height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .pd-backdrop {
@@ -36,299 +40,447 @@
 
 .pd-glow-1 {
     position: absolute;
-    width: 500px;
-    height: 500px;
+    width: 600px;
+    height: 600px;
     border: 1px solid rgba(218, 174, 45, 0.08);
     border-radius: 50%;
-    top: 100px;
-    right: -250px;
+    top: 50px;
+    right: -280px;
+    filter: blur(4px);
 }
 
 .pd-glow-2 {
     position: absolute;
-    width: 350px;
-    height: 350px;
+    width: 450px;
+    height: 450px;
     border: 1px solid rgba(218, 174, 45, 0.06);
     border-radius: 50%;
-    bottom: 100px;
-    left: -180px;
+    bottom: 50px;
+    left: -200px;
+    filter: blur(4px);
 }
 
-.product-details .container {
+.pd-grid-lines {
+    position: absolute;
+    inset: 0;
+    background-image: 
+        linear-gradient(rgba(218, 174, 45, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(218, 174, 45, 0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    opacity: 0.7;
+}
+
+.presentation-container {
     position: relative;
     z-index: 2;
-    max-width: 1400px;
+    max-width: 1300px;
     margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
 }
 
 /* =========================================================
-   PRODUCT HEADER
+   PRESENTATION VIEWPORT & SLIDES
    ========================================================= */
 
-.product-header {
-    text-align: center;
-    margin-bottom: 80px;
+.deck-viewport {
+    position: relative;
+    min-height: 520px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.logo-wrapper {
-    display: inline-block;
-    padding: 20px;
-    background: rgba(218, 174, 45, 0.04);
-    border: 1px solid rgba(218, 174, 45, 0.15);
+.main-extended-deck {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+}
+
+.started-extension-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.conduit-connector-line {
+    position: relative;
+    width: 3px;
+    height: 45px;
+    background: linear-gradient(180deg, var(--gold), rgba(218, 174, 45, 0.2));
+    margin: 0 auto;
+    box-shadow: 0 0 10px var(--gold);
+    z-index: 5;
+}
+
+.conduit-glow-dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 12px;
+    height: 12px;
+    background: var(--gold);
+    border: 2px solid #040405;
     border-radius: 50%;
+    box-shadow: 0 0 12px var(--gold);
+}
+
+.started-extension-card {
+    border-top: 2px solid var(--gold);
+}
+
+.glass-card {
+    position: relative;
+    background: linear-gradient(145deg, rgba(18, 18, 22, 0.92), rgba(10, 10, 14, 0.96));
+    border: 1px solid rgba(218, 174, 45, 0.25);
+    border-radius: 16px;
+    padding: 45px 50px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    min-height: 480px;
+    justify-content: space-between;
+}
+
+.slide-badge {
+    display: inline-block;
+    color: var(--gold);
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    background: rgba(218, 174, 45, 0.08);
+    padding: 6px 14px;
+    border-radius: 4px;
+    border: 1px solid rgba(218, 174, 45, 0.2);
+    align-self: flex-start;
+}
+
+/* Slide 0: Overview */
+.slide-hero {
+    text-align: center;
     margin-bottom: 25px;
-    box-shadow: 0 0 40px rgba(218, 174, 45, 0.1);
+}
+
+.hero-logo-box {
+    display: inline-block;
+    padding: 18px;
+    background: rgba(218, 174, 45, 0.05);
+    border: 1px solid rgba(218, 174, 45, 0.25);
+    border-radius: 50%;
+    margin-bottom: 15px;
+    box-shadow: 0 0 30px rgba(218, 174, 45, 0.15);
 }
 
 .details-logo {
-    width: 110px;
-    height: 110px;
+    width: 90px;
+    height: 90px;
     object-fit: contain;
-    display: block;
 }
 
-.product-header h1 {
-    font-size: clamp(3.2rem, 6vw, 5.5rem);
-    font-weight: 800;
-    letter-spacing: -2px;
-    color: #FFFFFF;
-    margin: 0;
+.slide-hero h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 900;
+    letter-spacing: -1.5px;
     text-transform: uppercase;
-}
-
-.header-gold-line {
-    width: 80px;
-    height: 4px;
-    background: var(--gold);
-    margin: 25px auto 0;
-    border-radius: 2px;
-    box-shadow: 0 0 12px var(--gold);
-}
-
-/* =========================================================
-   FLOW CONDUIT & CONNECTED NODES
-   ========================================================= */
-
-.flow-conduit-wrapper {
-    position: relative;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.conduit-line {
-    width: 2px;
-    height: 60px;
-    background: linear-gradient(180deg, var(--gold), rgba(218, 174, 45, 0.2));
-    margin: 0 auto;
-    box-shadow: 0 0 8px var(--gold);
-}
-
-.details-section {
-    position: relative;
-    background: linear-gradient(145deg, rgba(20, 20, 20, 0.9), rgba(10, 10, 10, 0.95));
-    border: 1px solid rgba(218, 174, 45, 0.2);
-    border-radius: 12px;
-    padding: 45px 50px;
-    margin: 0 auto;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    transition: border-color 0.3s ease;
-}
-
-.details-section:hover {
-    border-color: rgba(218, 174, 45, 0.4);
-}
-
-.section-node-indicator {
-    position: absolute;
-    top: -12px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.node-dot {
-    width: 14px;
-    height: 14px;
-    background: var(--gold);
-    border: 3px solid #050505;
-    border-radius: 50%;
-    box-shadow: 0 0 12px var(--gold);
-}
-
-.details-section h2 {
-    font-size: 2.2rem;
-    font-weight: 800;
-    margin-bottom: 20px;
-    color: #FFFFFF;
-    letter-spacing: -1px;
-}
-
-.details-section p {
-    color: #e0e0e0;
-    font-size: 1.1rem;
-    line-height: 1.85;
     margin: 0;
-}
-
-/* =========================================================
-   HOW IT'S GOING & FLOWCHART
-   ========================================================= */
-
-.going-node {
-    background: transparent;
-    border: none;
-    box-shadow: none;
-    padding: 20px 0 0;
-}
-
-.phase-header {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.phase-header h2 {
-    font-size: 2.5rem;
     color: #FFFFFF;
 }
 
-.flowchart {
-    width: 100%;
+.gold-accent-line {
+    width: 70px;
+    height: 3px;
+    background: var(--gold);
+    margin: 18px auto 0;
+    border-radius: 2px;
+    box-shadow: 0 0 10px var(--gold);
+}
+
+.gold-accent-line.align-left {
+    margin: 15px 0 25px;
+}
+
+.slide-body-content {
+    max-width: 900px;
+    margin: 0 auto 30px;
     text-align: center;
 }
 
-.phase-box {
-    position: relative;
+.lead-text {
+    font-size: 1.3rem;
+    line-height: 1.85;
+    color: #e5e5e5;
+    font-weight: 400;
+}
+
+/* Directional Arrow Navigation Actions */
+.slide-nav-action {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: auto;
+    padding-top: 15px;
+}
+
+.slide-nav-action.action-right {
+    align-items: flex-end;
+}
+
+.arrow-nav-btn {
     display: inline-flex;
     align-items: center;
-    gap: 10px;
-    background: var(--gold);
-    color: #050505;
-    padding: 14px 40px;
-    border-radius: 6px;
-    font-size: 1rem;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 1.5px;
-    box-shadow: 0 0 25px rgba(218, 174, 45, 0.25);
+    gap: 14px;
+    background: linear-gradient(135deg, rgba(218, 174, 45, 0.18), rgba(218, 174, 45, 0.06));
+    border: 1.5px solid var(--gold);
+    color: #FFFFFF;
+    padding: 12px 26px;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 0 25px rgba(218, 174, 45, 0.2);
 }
 
-.phase-pulse {
-    width: 8px;
-    height: 8px;
+.arrow-nav-btn:hover {
+    background: var(--gold);
+    color: #050505;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(218, 174, 45, 0.45);
+}
+
+.btn-label {
+    font-size: 0.95rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.btn-text-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.btn-sub {
+    font-size: 0.65rem;
+    letter-spacing: 1.5px;
+    opacity: 0.8;
+}
+
+.arrow-icon-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    color: var(--gold);
+    transition: transform 0.3s ease;
+}
+
+.arrow-nav-btn:hover .arrow-icon-circle {
+    background: #050505;
+    color: var(--gold);
+}
+
+.pulsing-down {
+    animation: pulseDown 1.8s infinite;
+}
+
+.pulsing-right {
+    animation: pulseRight 1.8s infinite;
+}
+
+@keyframes pulseDown {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(6px); }
+}
+
+@keyframes pulseRight {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(6px); }
+}
+
+.nav-hint {
+    font-size: 0.75rem;
+    color: #888888;
+    letter-spacing: 0.5px;
+}
+
+/* Slide 1: How it Started */
+.slide-top-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.arrow-back-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(218, 174, 45, 0.3);
+    color: var(--gold);
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.arrow-back-pill:hover {
+    background: var(--gold);
+    color: #050505;
+}
+
+.started-content {
+    text-align: left;
+    max-width: 100%;
+}
+
+.started-content h2 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #FFFFFF;
+    margin-bottom: 10px;
+}
+
+.started-narrative {
+    font-size: 1.35rem;
+    line-height: 1.9;
+    color: #e0e0e0;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 30px 35px;
+    border-left: 4px solid var(--gold);
+    border-radius: 0 12px 12px 0;
+}
+
+/* Slide 2: Phase 1 */
+.phase-card {
+    padding-bottom: 35px;
+}
+
+.phase-header-deck {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.phase-pill-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--gold);
+    color: #050505;
+    padding: 8px 22px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.phase-pulse-dot {
+    width: 7px;
+    height: 7px;
     background: #050505;
     border-radius: 50%;
 }
 
-.vertical-line {
-    width: 2px;
-    height: 45px;
-    background: var(--gold);
-    margin: 0 auto;
-    box-shadow: 0 0 8px var(--gold);
+.phase-header-deck h2 {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: #FFFFFF;
+    margin: 5px 0;
 }
 
-/* =========================================================
-   PROJECT BRANCHES & CARDS
-   ========================================================= */
+.phase-sub {
+    color: #999999;
+    font-size: 1rem;
+    margin: 0;
+}
 
-.flow-products {
-    position: relative;
+.deck-products-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 25px;
-    padding-top: 45px;
+    gap: 20px;
 }
 
-/* HORIZONTAL CONNECTOR ATTACHED EXACTLY BETWEEN COLUMN CENTERS */
-.horizontal-connector {
-    position: absolute;
-    top: 0;
-    left: 12.5%;
-    right: 12.5%;
-    height: 2px;
-    background: var(--gold);
-    box-shadow: 0 0 8px var(--gold);
-}
-
-.flow-item {
+.presentation-item {
     position: relative;
-    padding: 35px 25px 30px;
-    background: linear-gradient(145deg, rgba(25, 25, 25, 0.95), rgba(15, 15, 15, 0.98));
+    background: linear-gradient(145deg, rgba(25, 25, 30, 0.95), rgba(14, 14, 18, 0.98));
     border: 1px solid rgba(218, 174, 45, 0.25);
-    border-top: 4px solid var(--gold);
-    border-radius: 8px;
-    min-height: 270px;
+    border-top: 3px solid var(--gold);
+    border-radius: 10px;
+    padding: 25px 20px;
+    min-height: 250px;
     display: flex;
     flex-direction: column;
     text-align: left;
-    transition: border-color 0.35s ease, box-shadow 0.35s ease;
+    transition: all 0.3s ease;
 }
 
-.flow-item:hover {
+.presentation-item:hover {
     border-color: var(--gold);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(218, 174, 45, 0.15);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.7), 0 0 20px rgba(218, 174, 45, 0.2);
 }
 
-.branch-line {
+.item-badge-corner {
     position: absolute;
-    top: -45px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 2px;
-    height: 45px;
-    background: var(--gold);
-}
-
-.node-junction {
-    position: absolute;
-    top: -51px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: var(--gold);
-    border: 2px solid #050505;
-    box-shadow: 0 0 8px var(--gold);
+    top: 12px;
+    right: 15px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: rgba(218, 174, 45, 0.6);
 }
 
 .flow-item-header h3 {
     color: #FFFFFF;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     font-weight: 800;
-    margin-bottom: 15px;
-    letter-spacing: -0.5px;
+    margin-bottom: 12px;
 }
 
 .flow-item p {
-    color: #a0a0a0;
-    font-size: 0.95rem;
-    line-height: 1.65;
+    color: #a5a5a5;
+    font-size: 0.9rem;
+    line-height: 1.6;
     flex: 1;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 .timeline-buttons {
     display: flex;
-    gap: 10px;
+    gap: 8px;
     align-items: center;
     margin-top: auto;
-    flex-wrap: wrap;
 }
 
-.btn-website {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    background: transparent;
-    color: var(--gold);
-    border: 1px solid var(--gold);
-    padding: 8px 14px;
+.btn-website, .btn-learn {
+    padding: 7px 12px;
     border-radius: 4px;
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     transition: 0.3s ease;
+}
+
+.btn-website {
+    background: transparent;
+    color: var(--gold);
+    border: 1px solid var(--gold);
     text-decoration: none;
 }
 
@@ -338,20 +490,10 @@
 }
 
 .btn-learn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
     background: rgba(218, 174, 45, 0.12);
     color: var(--gold);
     border: 1px solid rgba(218, 174, 45, 0.3);
-    padding: 8px 14px;
-    border-radius: 4px;
-    font-size: 0.75rem;
-    font-weight: 700;
     cursor: pointer;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    transition: 0.3s ease;
 }
 
 .btn-learn:hover {
@@ -377,13 +519,13 @@
 
 .modal-content {
     position: relative;
-    background: #111111;
+    background: #111115;
     border: 1px solid var(--gold);
     border-top: 4px solid var(--gold);
     padding: 45px 40px;
     max-width: 550px;
     width: 100%;
-    border-radius: 10px;
+    border-radius: 12px;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 30px rgba(218, 174, 45, 0.15);
 }
 
@@ -438,6 +580,7 @@
     font-size: 0.85rem;
     text-transform: uppercase;
     transition: 0.3s ease;
+    text-decoration: none;
 }
 
 .modal-link:hover {
@@ -445,35 +588,72 @@
 }
 
 /* =========================================================
-   RESPONSIVE DESIGN
+   RESPONSIVE DESIGN FOR PRESENTATION DECK
    ========================================================= */
 
-@media (max-width: 1050px) {
-    .flow-products {
+@media (max-width: 1100px) {
+    .deck-products-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 45px 25px;
-    }
-
-    .horizontal-connector {
-        display: none;
-    }
-
-    .branch-line, .node-junction {
-        display: none;
+        gap: 16px;
     }
 }
 
 @media (max-width: 768px) {
     .product-details {
-        padding: 110px 5% 70px;
+        padding: 95px 3% 40px;
     }
 
-    .details-section {
-        padding: 30px 25px;
+    .deck-header {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        padding: 12px 16px;
     }
 
-    .flow-products {
+    .deck-stepper {
+        gap: 6px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .step-pill {
+        padding: 6px 12px;
+        font-size: 0.75rem;
+    }
+
+    .glass-card {
+        padding: 30px 20px;
+        min-height: auto;
+    }
+
+    .slide-hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .lead-text {
+        font-size: 1.05rem;
+    }
+
+    .started-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .started-narrative {
+        font-size: 1.05rem;
+        padding: 20px;
+    }
+
+    .deck-products-grid {
         grid-template-columns: 1fr;
-        gap: 20px;
+    }
+
+    .slide-nav-action.action-right {
+        align-items: center;
+    }
+
+    .deck-footer {
+        flex-direction: column;
+        gap: 10px;
+        padding: 12px;
     }
 }
