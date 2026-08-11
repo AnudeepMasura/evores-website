@@ -1,115 +1,222 @@
 .investors-page {
+    background: #050505;
+    color: #FFFFFF;
     min-height: 100vh;
-    padding-top: 140px;
-    background: var(--black);
-    color: white;
+    padding-top: 130px;
+}
+
+.investors-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    text-align: center;
 }
 
 .investors-header {
-    margin-bottom: 70px;
     max-width: 850px;
-}
-
-.investors-badge {
-    display: inline-block;
-    color: var(--gold);
-    font-size: 0.8rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    margin-bottom: 15px;
-    text-transform: uppercase;
+    margin: 0 auto 60px;
 }
 
 .investors-header h1 {
-    font-size: clamp(3rem, 6vw, 4.5rem);
+    font-size: clamp(2.5rem, 5vw, 3.8rem);
     font-weight: 800;
-    margin-bottom: 20px;
-    letter-spacing: -2px;
+    color: #FFFFFF;
+    margin-bottom: 12px;
 }
 
-.investors-header h1 span {
-    color: var(--gold);
-}
-
-.investors-header p {
-    color: #a0a0a0;
-    font-size: 1.2rem;
-    line-height: 1.8;
-}
-
-.investors-gold-line {
-    width: 80px;
-    height: 3px;
-    background: var(--gold);
-    margin-top: 30px;
-}
-
-.investors-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-    margin-bottom: 100px;
-}
-
-.investor-card {
-    background: var(--black-surface);
-    border: 1px solid var(--gray-dark);
-    border-top: 3px solid var(--gold);
-    padding: 40px 30px;
-    transition: transform 0.35s ease, border-color 0.35s ease;
-}
-
-.investor-card:hover {
-    transform: translateY(-8px);
-    border-color: var(--gold);
-}
-
-.investor-card-num {
-    color: var(--gold);
-    font-size: 1.8rem;
-    font-weight: 800;
-    margin-bottom: 20px;
-}
-
-.investor-card h3 {
+.investors-sub-heading {
     font-size: 1.5rem;
+    color: var(--gold);
     font-weight: 700;
-    margin-bottom: 15px;
-    color: white;
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
 }
 
-.investor-card p {
-    color: #a0a0a0;
-    font-size: 1rem;
-    line-height: 1.7;
+.investors-intro-text {
+    font-size: 1.15rem;
+    line-height: 1.85;
+    color: #cccccc;
+    max-width: 780px;
+    margin: 0 auto;
 }
 
-.investor-contact-card {
-    background: rgba(218, 174, 45, 0.05);
-    border: 1px solid rgba(218, 174, 45, 0.2);
-    padding: 60px 40px;
-    text-align: center;
-    border-radius: 8px;
-    margin-bottom: 100px;
+/* Section: Our Journey */
+.journey-section {
+    margin-bottom: 90px;
 }
 
-.investor-contact-card h2 {
+.journey-title-box {
+    margin-bottom: 45px;
+}
+
+.journey-title-box h2 {
     font-size: 2.2rem;
     font-weight: 800;
+    color: #FFFFFF;
+    margin-bottom: 10px;
+}
+
+.journey-sub-text {
+    font-size: 1.1rem;
+    color: #999999;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+/* Tree Structure & Cards */
+.journey-tree {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.glass-investor-card {
+    background: linear-gradient(145deg, rgba(18, 18, 22, 0.95), rgba(10, 10, 14, 0.98));
+    border: 1px solid rgba(218, 174, 45, 0.3);
+    border-radius: 14px;
+    padding: 32px 30px;
+    backdrop-filter: blur(14px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+    transition: all 0.35s ease;
+    text-align: left;
+}
+
+.glass-investor-card:hover {
+    border-color: var(--gold);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8), 0 0 25px rgba(218, 174, 45, 0.2);
+}
+
+.card-badge {
+    display: inline-block;
+    color: var(--gold);
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    background: rgba(218, 174, 45, 0.1);
+    padding: 4px 12px;
+    border-radius: 4px;
+    border: 1px solid rgba(218, 174, 45, 0.25);
     margin-bottom: 15px;
 }
 
-.investor-contact-card p {
-    color: #a0a0a0;
-    font-size: 1.1rem;
-    margin-bottom: 20px;
+/* Root Parent Card */
+.tree-root-card {
+    max-width: 680px;
+    width: 100%;
+    border-top: 3px solid var(--gold);
 }
 
-.investor-email {
-    display: inline-block;
+.tree-root-card h3 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #FFFFFF;
+    margin-bottom: 12px;
+}
+
+.company-desc {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: #d0d0d0;
+    margin-bottom: 18px;
+}
+
+.company-meta {
+    font-size: 0.85rem;
     color: var(--gold);
-    font-size: 1.3rem;
-    font-weight: 700;
-    border-bottom: 2px solid var(--gold);
-    padding-bottom: 4px;
+    font-weight: 600;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.dot-sep {
+    opacity: 0.6;
+}
+
+/* SVG Conduits */
+.tree-conduits {
+    width: 100%;
+    max-width: 500px;
+    height: 70px;
+    margin: 5px 0;
+}
+
+.tree-svg-lines {
+    width: 100%;
+    height: 100%;
+}
+
+/* Branch Cards */
+.tree-branches {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    width: 100%;
+}
+
+.tree-branch-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 280px;
+}
+
+.tree-branch-card h3 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #FFFFFF;
+    margin-bottom: 12px;
+}
+
+.ecosystem-desc {
+    font-size: 0.98rem;
+    line-height: 1.7;
+    color: #b5b5b5;
+    margin-bottom: 25px;
+    flex: 1;
+}
+
+.card-action {
+    margin-top: auto;
+}
+
+.learn-more-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, rgba(218, 174, 45, 0.2), rgba(218, 174, 45, 0.08));
+    border: 1.5px solid var(--gold);
+    color: #FFFFFF;
+    padding: 10px 22px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(218, 174, 45, 0.15);
+}
+
+.learn-more-btn:hover {
+    background: var(--gold);
+    color: #050505;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(218, 174, 45, 0.4);
+}
+
+/* Responsiveness */
+@media (max-width: 900px) {
+    .tree-branches {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .tree-conduits {
+        display: none;
+    }
+
+    .investors-header h1 {
+        font-size: 2.2rem;
+    }
 }

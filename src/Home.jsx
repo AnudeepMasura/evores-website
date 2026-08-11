@@ -1,4 +1,3 @@
-import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
 import About from "./components/About/About";
 import Products from "./components/Products/Products";
@@ -7,32 +6,18 @@ import Careers from "./components/Careers/Careers";
 import Contact from "./components/Contact/Contact";
 import Footer from "./components/Footer/Footer";
 
-function Home(){
-
-return(
-
-<>
-
-<Navbar/>
-
-<Hero/>
-
-<About/>
-
-<Products/>
-
-<Mission/>
-
-<Careers/>
-
-<Contact/>
-
-<Footer/>
-
-</>
-
-)
-
+function Home() {
+  return (
+    <>
+      <Hero />
+      <About />
+      <Products />
+      <Mission />
+      <Careers />
+      <Contact />
+      <Footer />
+    </>
+  );
 }
 
 export default Home;

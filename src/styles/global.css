@@ -8,14 +8,16 @@
 
 html{
     scroll-behavior:smooth;
+    background-color:#050505;
 }
 
 body{
     font-family:'Inter',sans-serif;
-    background:var(--white);
-    color:var(--black);
+    background-color:#050505;
+    color:white;
     overflow-x:hidden;
     line-height:1.5;
+    min-height:100vh;
 }
 
 a{

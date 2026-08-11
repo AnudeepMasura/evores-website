@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
-import Footer from "../../components/Footer/Footer";
 import productDetails from "../../data/productDetails";
 import "./ProductDetails.css";
 
 function ProductDetails() {
   const { slug } = useParams();
   const [selectedSubItem, setSelectedSubItem] = useState(null);
+  
   // viewMode: 'main' (Overview + How it Started extension) or 'phase1' (Phase 1 products grid)
   const [activeView, setActiveView] = useState("main");
   const [isStartedExpanded, setIsStartedExpanded] = useState(false);
@@ -230,7 +230,7 @@ function ProductDetails() {
                     <p className="phase-sub">Current projects & live applications powering the {product.title} platform</p>
                   </div>
 
-                  {/* 4 Projects Grid */}
+                  {/* Extended 4 Projects Grid */}
                   <motion.div 
                     className="flow-products deck-products-grid"
                     variants={staggerContainer}
@@ -332,10 +332,8 @@ function ProductDetails() {
           </motion.div>
         )}
       </AnimatePresence>
-
-      <Footer />
     </div>
   );
 }
 
-export default ProductDetails;
+export default ProductDetails;

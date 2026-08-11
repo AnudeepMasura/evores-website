@@ -3,6 +3,9 @@ import { Routes, Route, useLocation } from "react-router-dom";
 
 import Home from "./Home";
 import ProductDetails from "./pages/ProductDetails/ProductDetails";
+import Team from "./pages/Team/Team";
+import CareersPage from "./pages/Careers/CareersPage";
+import Investors from "./pages/Investors/Investors";
 import Navbar from "./components/Navbar/Navbar";
 
 function ScrollToTop() {
@@ -19,29 +22,23 @@ function App() {
   return (
     <>
       <ScrollToTop />
-      {/* Navbar visible on every page */}
+      {/* Global Navbar */}
       <Navbar />
 
       <Routes>
-
         {/* Home page */}
-        <Route
-          path="/"
-          element={<Home />}
-        />
+        <Route path="/" element={<Home />} />
 
-        {/* Product details page */}
-        <Route
-          path="/products/:slug"
-          element={<ProductDetails />}
-        />
+        {/* Dedicated Ecosystem & Product detail routes */}
+        <Route path="/products/asat" element={<ProductDetails />} />
+        <Route path="/products/happi" element={<ProductDetails />} />
+        <Route path="/products/:slug" element={<ProductDetails />} />
+        <Route path="/products/:slug/:subslug" element={<ProductDetails />} />
 
-        {/* Sub-product details fallback route */}
-        <Route
-          path="/products/:slug/:subslug"
-          element={<ProductDetails />}
-        />
-
+        {/* Dedicated Company Pages */}
+        <Route path="/team" element={<Team />} />
+        <Route path="/careers" element={<CareersPage />} />
+        <Route path="/investors" element={<Investors />} />
       </Routes>
     </>
   );

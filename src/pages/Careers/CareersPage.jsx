@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import Footer from "../../components/Footer/Footer";
 import "./CareersPage.css";
 
 function CareersPage() {
@@ -69,7 +68,6 @@ function CareersPage() {
         </div>
 
       </div>
-      <Footer />
     </div>
   );
 }
