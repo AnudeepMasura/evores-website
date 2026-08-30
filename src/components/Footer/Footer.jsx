@@ -1,8 +1,9 @@
+import { FaInstagram, FaLinkedinIn } from "react-icons/fa6";
 import "./Footer.css";
 
 function Footer() {
   return (
-    <footer className="footer">
+    <footer className="footer" id="contact">
 
       <div className="footer-container">
 
@@ -10,19 +11,14 @@ function Footer() {
         <div className="footer-left">
 
           <div className="footer-heading-label">
-            CONTACT
+            CONTACT US
           </div>
 
           <h2>
-            Get in touch.
+            Get in touch
           </h2>
 
           <div className="contact-details">
-
-            <div className="contact-item">
-              <span>DIRECT LINE</span>
-              <p>+91 9912544545</p>
-            </div>
 
             <div className="contact-item">
               <span>GSTIN</span>
@@ -56,26 +52,29 @@ function Footer() {
                 href="#"
                 aria-label="LinkedIn"
               >
-                in
+                <FaLinkedinIn size={16} />
               </a>
 
               <a
                 href="#"
                 aria-label="Instagram"
               >
-                ◎
+                <FaInstagram size={18} />
               </a>
 
             </div>
 
           </div>
 
-          <div className="copyright">
-            ©2026 EvoRES Technology LLP
-          </div>
-
         </div>
 
+      </div>
+
+      {/* Bottom Copyright Row */}
+      <div className="footer-bottom">
+        <div className="copyright">
+          © 2026 EvoRES Technology LLP
+        </div>
       </div>
 
     </footer>

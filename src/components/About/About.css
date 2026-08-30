@@ -1,36 +1,47 @@
 .about-mission-section {
-    background: var(--white);
+    background: #000000;
     padding: 8rem 5%;
+    position: relative;
 }
 
 .about-mission-grid {
     display: grid;
-    grid-template-columns: 1fr 1px 1fr;
-    gap: 4rem;
-    align-items: start;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: stretch;
 }
 
-.col-divider {
-    background: var(--gray-light);
-    height: 100%;
-    width: 1px;
-    align-self: stretch;
-}
-
-.about-col, .mission-col {
+.about-card-box, .mission-card-box {
     scroll-margin-top: 100px;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 3.5rem 3rem;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
-.section-title {
-    font-size: 3rem;
+.about-card-box:hover, .mission-card-box:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+}
+
+.about-card-box .section-title,
+.mission-card-box .section-title {
+    font-size: 2.8rem;
     font-weight: 800;
     margin-bottom: 2rem;
     line-height: 1.1;
-    letter-spacing: -2px;
+    letter-spacing: -1.5px;
+    color: #111111;
 }
 
-.section-title span {
+.about-card-box .section-title span,
+.mission-card-box .section-title span {
     color: var(--gold);
+    background: none;
+    -webkit-text-fill-color: initial;
 }
 
 .text-block {
@@ -38,26 +49,31 @@
 }
 
 .text-block p {
-    font-size: 1.15rem;
-    color: var(--gray);
+    font-size: 1.1rem;
+    color: #444444;
     line-height: 1.85;
-    margin-bottom: 20px;
+    margin-bottom: 22px;
+}
+
+.text-block p:last-child {
+    margin-bottom: 0;
 }
 
 /* RESPONSIVE STACKING FOR MOBILE (UNDER 768px) */
-@media (max-width: 767px) {
-    .about-mission-section {
-        padding: 5rem 5%;
-    }
-
+@media (max-width: 991px) {
     .about-mission-grid {
         grid-template-columns: 1fr;
         gap: 2.5rem;
     }
+}
 
-    .col-divider {
-        height: 1px;
-        width: 100%;
+@media (max-width: 767px) {
+    .about-mission-section {
+        padding: 4rem 5%;
+    }
+
+    .about-card-box, .mission-card-box {
+        padding: 2.5rem 1.8rem;
     }
 
     .section-title {
@@ -66,6 +82,6 @@
     }
 
     .text-block p {
-        font-size: 1.05rem;
+        font-size: 1rem;
     }
 }

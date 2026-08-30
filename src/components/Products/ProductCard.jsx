@@ -38,8 +38,17 @@ function ProductCard({ product }) {
       <p>{product.description}</p>
 
       <div className="buttons">
-        <Link to={`/products/${product.slug}`}>
-          Learn More →
+        {product.website && product.website !== "#" ? (
+          <a href={product.website} target="_blank" rel="noopener noreferrer" className="btn-visit">
+            VISIT WEBSITE
+          </a>
+        ) : (
+          <a href="#" onClick={(e) => e.preventDefault()} className="btn-visit disabled">
+            VISIT WEBSITE
+          </a>
+        )}
+        <Link to={`/products/${product.slug}`} className="btn-learn">
+          LEARN MORE
         </Link>
       </div>
     </div>

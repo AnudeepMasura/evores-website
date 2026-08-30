@@ -6,332 +6,227 @@ import "./ProductDetails.css";
 
 function ProductDetails() {
   const { slug } = useParams();
-  const [selectedSubItem, setSelectedSubItem] = useState(null);
-  
-  // viewMode: 'main' (Overview + How it Started extension) or 'phase1' (Phase 1 products grid)
-  const [activeView, setActiveView] = useState("main");
-  const [isStartedExpanded, setIsStartedExpanded] = useState(false);
+  const [activeSubPage, setActiveSubPage] = useState(null);
+  const [toastMessage, setToastMessage] = useState(null);
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "instant" });
-    setActiveView("main");
-    setIsStartedExpanded(false);
+    setActiveSubPage(null);
   }, [slug]);
 
   const productKey = slug || "asat";
-  const product = productDetails[productKey];
+  const product = productDetails[productKey] || productDetails.asat;
 
-  const handleExpandStarted = () => {
-    setIsStartedExpanded(true);
+  const triggerToast = (msg) => {
+    setToastMessage(msg);
     setTimeout(() => {
-      const el = document.getElementById("started-section-node");
-      if (el) {
-        el.scrollIntoView({ behavior: "smooth", block: "center" });
-      }
-    }, 100);
+      setToastMessage(null);
+    }, 3000);
   };
 
-  const handleGoToPhaseOne = () => {
-    setActiveView("phase1");
+  const handleOpenSubProduct = (subProduct) => {
+    setActiveSubPage(subProduct);
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   };
 
-  const handleBackToMain = () => {
-    setActiveView("main");
-    setIsStartedExpanded(true);
+  const handleGoBack = () => {
+    setActiveSubPage(null);
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   };
 
-  if (!product) {
-    return (
-      <div className="product-not-found">
-        <div className="container">
-          <h1>Product Not Found</h1>
-          <p>The requested product page does not exist.</p>
-          <Link to="/" className="back-btn">← Back to Home</Link>
-        </div>
-      </div>
-    );
-  }
-
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 25 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.16, 1, 0.3, 1] } },
-  };
-
-  const staggerContainer = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { staggerChildren: 0.12 } }
-  };
+  // Convert products object to array if it's an object (for ASAT) or handle fallback
+  const subProductsList = product.products
+    ? Object.values(product.products)
+    : [];
 
   return (
-    <div className="product-details-page deck-presentation-mode">
-      <section className="product-details">
+    <div className="asat-page-wrapper">
+      <AnimatePresence mode="wait">
         
-        {/* Background glow & ambient deck particles */}
-        <div className="pd-backdrop">
-          <div className="pd-glow-1" />
-          <div className="pd-glow-2" />
-          <div className="pd-grid-lines" />
-        </div>
-
-        <div className="container presentation-container">
-
-          <AnimatePresence mode="wait">
-            
-            {/* =========================================================
-               MAIN VIEW: OVERVIEW + HOW IT STARTED EXTENSION
-               ========================================================= */}
-            {activeView === "main" && (
-              <motion.div
-                key="main-overview-view"
-                initial={{ opacity: 0, scale: 0.98 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.98 }}
-                transition={{ duration: 0.4 }}
-                className="presentation-slide main-extended-deck"
-              >
-                
-                {/* 1. OVERVIEW CARD */}
-                <div className="slide-card glass-card overview-card-primary">
-                  <div className="slide-badge">01 // OVERVIEW</div>
-                  
-                  <div className="slide-hero">
-                    <div className="hero-logo-box">
-                      <img
-                        src={product.logo}
-                        alt={product.title}
-                        className="details-logo"
-                      />
-                    </div>
-                    <h1>{product.title}</h1>
-                    <div className="gold-accent-line" />
-                  </div>
-
-                  <div className="slide-body-content">
-                    <p className="lead-text">{product.overview}</p>
-                  </div>
-
-                  {/* DOWN ARROW BUTTON (IF NOT YET EXPANDED) */}
-                  {!isStartedExpanded && (
-                    <motion.div 
-                      className="slide-nav-action action-down"
-                      initial={{ opacity: 0, y: 10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                    >
-                      <button 
-                        className="arrow-nav-btn btn-down"
-                        onClick={handleExpandStarted}
-                        title="Click to expand How it's Started below"
-                      >
-                        <span className="btn-label">HOW IT STARTED</span>
-                        <div className="arrow-icon-circle pulsing-down">
-                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                            <line x1="12" y1="5" x2="12" y2="19"></line>
-                            <polyline points="19 12 12 19 5 12"></polyline>
-                          </svg>
-                        </div>
-                      </button>
-                      <span className="nav-hint">Click Down Arrow to reveal How it Started</span>
-                    </motion.div>
-                  )}
-
-                </div>
-
-                {/* 2. HOW IT'S STARTED EXTENSION CARD (EXPANDS DIRECTLY BELOW OVERVIEW) */}
-                <AnimatePresence>
-                  {isStartedExpanded && (
-                    <motion.div
-                      id="started-section-node"
-                      initial={{ opacity: 0, y: 40, height: 0 }}
-                      animate={{ opacity: 1, y: 0, height: "auto" }}
-                      exit={{ opacity: 0, y: 20, height: 0 }}
-                      transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                      className="started-extension-wrapper"
-                    >
-                      {/* Vertical Flow Connector Conduit */}
-                      <div className="conduit-connector-line">
-                        <div className="conduit-glow-dot" />
-                      </div>
-
-                      <div className="slide-card glass-card started-extension-card">
-                        <div className="slide-badge">02 // ORIGIN & FOUNDATION</div>
-
-                        <div className="slide-body-content started-content">
-                          <h2>How it's Started</h2>
-                          <div className="gold-accent-line align-left" />
-                          <p className="started-narrative">{product.started}</p>
-                        </div>
-
-                        {/* RIGHT ARROW NAVIGATION TO PHASE 1 */}
-                        <div className="slide-nav-action action-right">
-                          <button 
-                            className="arrow-nav-btn btn-right"
-                            onClick={handleGoToPhaseOne}
-                            title="Click right to go to Phase 1"
-                          >
-                            <div className="btn-text-group">
-                              <span className="btn-sub">NEXT SECTION</span>
-                              <span className="btn-label">PHASE ONE</span>
-                            </div>
-                            <div className="arrow-icon-circle pulsing-right">
-                              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                                <line x1="5" y1="12" x2="19" y2="12"></line>
-                                <polyline points="12 5 19 12 12 19"></polyline>
-                              </svg>
-                            </div>
-                          </button>
-                          <span className="nav-hint">Click Right Arrow to view Phase 1 Projects</span>
-                        </div>
-
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-
-              </motion.div>
-            )}
-
-            {/* =========================================================
-               PHASE 1 VIEW (HOW IT'S GOING & PROJECTS GRID)
-               ========================================================= */}
-            {activeView === "phase1" && (
-              <motion.div
-                key="phase1-view"
-                initial={{ opacity: 0, x: 80 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -80 }}
-                transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
-                className="presentation-slide slide-phase"
-              >
-                <div className="slide-card glass-card phase-card">
-                  
-                  {/* LEFT ARROW BACK BUTTON TO MAIN VIEW */}
-                  <div className="slide-top-nav">
-                    <button 
-                      className="arrow-back-pill"
-                      onClick={handleBackToMain}
-                    >
-                      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                        <line x1="19" y1="12" x2="5" y2="12"></line>
-                        <polyline points="12 19 5 12 12 5"></polyline>
-                      </svg>
-                      <span>Back to Overview & How it Started</span>
-                    </button>
-                    <div className="slide-badge">03 // ECOSYSTEM ROADMAP</div>
-                  </div>
-
-                  <div className="phase-header-deck">
-                    <div className="phase-pill-badge">
-                      <span className="phase-pulse-dot" />
-                      {product.going.phase}
-                    </div>
-                    <h2>How it's Going</h2>
-                    <p className="phase-sub">Current projects & live applications powering the {product.title} platform</p>
-                  </div>
-
-                  {/* Extended 4 Projects Grid */}
-                  <motion.div 
-                    className="flow-products deck-products-grid"
-                    variants={staggerContainer}
-                    initial="hidden"
-                    animate="visible"
-                  >
-                    {product.going.products.map((item, index) => (
-                      <motion.div 
-                        className="flow-item presentation-item" 
-                        key={index}
-                        variants={fadeInUp}
-                        whileHover={{ y: -6, transition: { duration: 0.2 } }}
-                      >
-                        <div className="item-badge-corner">0{index + 1}</div>
-                        <div className="flow-item-header">
-                          <h3>{item.name}</h3>
-                        </div>
-
-                        <p>{item.description}</p>
-
-                        <div className="timeline-buttons">
-                          <a
-                            href={item.website && item.website !== "#" ? item.website : "#"}
-                            target={item.website && item.website !== "#" ? "_blank" : "_self"}
-                            rel="noopener noreferrer"
-                            className="btn-website"
-                            onClick={(e) => {
-                              if (!item.website || item.website === "#") {
-                                e.preventDefault();
-                                setSelectedSubItem(item);
-                              }
-                            }}
-                          >
-                            VIEW SITE
-                          </a>
-
-                          <button 
-                            className="btn-learn"
-                            onClick={() => setSelectedSubItem(item)}
-                          >
-                            LEARN MORE
-                          </button>
-                        </div>
-                      </motion.div>
-                    ))}
-                  </motion.div>
-
-                </div>
-              </motion.div>
-            )}
-
-          </AnimatePresence>
-
-        </div>
-
-      </section>
-
-      {/* Modal for Sub-product Details */}
-      <AnimatePresence>
-        {selectedSubItem && (
-          <motion.div 
-            className="modal-backdrop"
+        {/* =========================================================
+           1. MAIN ECOSYSTEM VIEW (ALL 4 PRODUCTS + STRUCTURE TREE)
+           ========================================================= */}
+        {!activeSubPage ? (
+          <motion.div
+            key="asat-main-view"
+            className="asat-view-container"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            onClick={() => setSelectedSubItem(null)}
+            transition={{ duration: 0.4 }}
           >
-            <motion.div 
-              className="modal-content"
-              initial={{ scale: 0.85, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.85, opacity: 0 }}
-              onClick={(e) => e.stopPropagation()}
-            >
-              <button 
-                className="modal-close"
-                onClick={() => setSelectedSubItem(null)}
-              >
-                ✕
-              </button>
-              <div className="modal-badge">{product.title} Project</div>
-              <h2>{selectedSubItem.name}</h2>
-              <p className="modal-desc">{selectedSubItem.description}</p>
-              <p className="modal-subtext">
-                Part of EvoRES Technology LLP's {product.title} ecosystem strategy. Dedicated modular architecture providing high-speed digital infrastructure.
-              </p>
+            <main className="asat-main-content">
+              
+              {/* Title Section */}
+              <div className="asat-title-header">
+                <h1 className="asat-main-title">{product.title || "As Simple as That"}</h1>
+              </div>
 
-              {selectedSubItem.website && selectedSubItem.website !== "#" && (
-                <a 
-                  href={selectedSubItem.website} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="modal-link"
-                >
-                  Visit Official Website →
-                </a>
-              )}
-            </motion.div>
+              <div className="section-label-bar">
+                <h2 className="section-mono-tag">OUR PRODUCTS</h2>
+              </div>
+
+              {/* 4 Sub-Products Grid */}
+              <div className="asat-products-grid">
+                {subProductsList.map((item) => (
+                  <div key={item.slug} className="asat-product-card">
+                    <div className="card-top-info">
+                      <h3 className="sub-product-title">{item.name}</h3>
+                      <p className="sub-product-lines">
+                        {item.shortLines && item.shortLines.length >= 3 ? (
+                          <>
+                            {item.shortLines[0]}<br />
+                            {item.shortLines[1]}<br />
+                            {item.shortLines[2]}
+                          </>
+                        ) : (
+                          item.para1
+                        )}
+                      </p>
+                    </div>
+
+                    <div className="card-actions-bar">
+                      <button
+                        onClick={() => handleOpenSubProduct(item)}
+                        className="btn-pill-outline"
+                      >
+                        LEARN MORE
+                      </button>
+                      <button
+                        onClick={() => triggerToast(item.toastMsg || `Launching ${item.name}...`)}
+                        className="btn-pill-filled"
+                      >
+                        VISIT WEBSITE
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Structure Section Added on Home Page */}
+              <div className="asat-structure-section">
+                <div className="section-label-bar">
+                  <h2 className="section-mono-tag">STRUCTURE</h2>
+                </div>
+
+                {/* Tree Diagram matching exact HTML structure */}
+                <div className="structure-tree-container">
+                  {/* Root: EvoRES Technology */}
+                  <div className="tree-node tree-root">
+                    <span>EVORES TECHNOLOGY</span>
+                  </div>
+
+                  {/* Down Arrow */}
+                  <div className="tree-connector-down">
+                    <div className="line-v"></div>
+                    <div className="arrow-head"></div>
+                  </div>
+
+                  {/* Parent: As Simple as That */}
+                  <div className="tree-node tree-parent">
+                    <span>AS SIMPLE AS THAT</span>
+                  </div>
+
+                  {/* Branch Line Connector Down */}
+                  <div className="tree-branch-wrapper">
+                    <div className="line-v short-v"></div>
+                    <div className="line-h-connector"></div>
+                  </div>
+
+                  {/* 4 Children Products */}
+                  <div className="tree-children-grid">
+                    {subProductsList.map((item) => (
+                      <div key={item.slug} className="tree-node tree-child">
+                        <div className="top-vertical-pin"></div>
+                        <span>{item.name}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+            </main>
+
+            <footer className="asat-footer">
+              <p className="footer-origin">MADE IN VIJAYAWADA</p>
+              <p className="footer-copyright">© All rights reserved with EvoRES Technology LLP</p>
+            </footer>
+          </motion.div>
+        ) : (
+
+          /* =========================================================
+             2. SUB-PRODUCT DETAIL VIEW (ABOUT PRODUCT + JOURNEY TIMELINE)
+             ========================================================= */
+          <motion.div
+            key="asat-detail-view"
+            className="asat-view-container"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.4 }}
+          >
+            <main className="asat-detail-content">
+              
+              {/* Navigation Back Button */}
+              <div className="back-btn-wrapper">
+                <button onClick={handleGoBack} className="btn-back-pill">
+                  <span>← Back to Products</span>
+                </button>
+              </div>
+
+              {/* 1. Product Logo / Title */}
+              <div className="asat-title-header">
+                <h1 className="asat-main-title">{activeSubPage.name}</h1>
+              </div>
+
+              {/* 2. About Product (2 Paragraphs) */}
+              <div className="detail-about-card">
+                <h2 className="section-mono-tag">About {activeSubPage.name}</h2>
+                <div className="about-paragraphs-body">
+                  <p>{activeSubPage.para1}</p>
+                  <p>{activeSubPage.para2}</p>
+                </div>
+              </div>
+
+              {/* 3. Journey Timeline */}
+              <div className="detail-timeline-section">
+                <h2 className="section-mono-tag">JOURNEY</h2>
+                
+                <div className="vertical-timeline-conduit">
+                  {activeSubPage.timeline && activeSubPage.timeline.map((step) => (
+                    <div className="timeline-step-item" key={step.num}>
+                      <div className="step-circle-pin">
+                        {step.num}
+                      </div>
+                      <div className="step-content-body">
+                        <div className="step-header-row">
+                          <h3 className="step-title">{step.title}</h3>
+                          <span className="period-badge">{step.period}</span>
+                        </div>
+                        {step.desc && <p className="step-desc">{step.desc}</p>}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+            </main>
+
+            <footer className="asat-footer">
+              <p className="footer-origin">MADE IN VIJAYAWADA</p>
+              <p className="footer-copyright">© All rights reserved with EvoRES Technology LLP</p>
+            </footer>
           </motion.div>
         )}
+
       </AnimatePresence>
+
+      {/* Notification Toast */}
+      {toastMessage && (
+        <div className="toast-notification-pill">
+          {toastMessage}
+        </div>
+      )}
     </div>
   );
 }

@@ -29,7 +29,6 @@ function Hero() {
       <div className="hero-backdrop">
         <div className="glow-orb glow-orb-1" />
         <div className="glow-orb glow-orb-2" />
-        <div className="hero-grid-overlay" />
       </div>
 
       <div className="container hero-container">
@@ -41,19 +40,13 @@ function Hero() {
           animate="visible"
         >
 
-          <motion.div className="hero-badge" variants={itemVariants}>
-            <span className="badge-dot" /> EVORES TECHNOLOGY LLP
-          </motion.div>
-
           <motion.h1 className="hero-title" variants={itemVariants}>
-            From Ideas <span className="gold-gradient-text">to Infinity.</span>
+            From Ideas <span className="gold-gradient-text">to Infinity...</span>
           </motion.h1>
 
           <motion.p className="hero-subtitle" variants={itemVariants}>
-            Evolving Research &amp; Engineering Solutions at EvoRES Technology.
+            Evolving Research &amp; Engineering Solutions.
           </motion.p>
-
-          <motion.div className="hero-line-glow" variants={itemVariants} />
 
         </motion.div>
 

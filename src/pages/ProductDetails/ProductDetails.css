@@ -1,102 +1,446 @@
 /* =========================================================
-   EVORES PRODUCT DETAILS - PRESENTATION SLIDE DECK THEME
-   BLACK + GOLD HIGH-TECH INTERACTIVE PRESENTATION TEMPLATE
+   AS SIMPLE AS THAT (ASAT) REPLICA THEME & STYLES
    ========================================================= */
 
-.product-details-page.deck-presentation-mode {
-    background: #040405;
-    color: #FFFFFF;
+.asat-page-wrapper {
+    background-color: #000000;
+    color: #ffffff;
     min-height: 100vh;
-    overflow-x: hidden;
-}
-
-.product-details {
-    position: relative;
-    padding: 135px 4% 60px;
-    background:
-        radial-gradient(
-            circle at 50% 10%,
-            rgba(218, 174, 45, 0.14),
-            transparent 45%
-        ),
-        radial-gradient(
-            circle at 85% 85%,
-            rgba(218, 174, 45, 0.07),
-            transparent 35%
-        ),
-        #040405;
-    min-height: calc(100vh - 80px);
+    padding-top: 100px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+}
+
+.asat-view-container {
+    width: 100%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.asat-main-content, .asat-detail-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
-}
-
-.pd-backdrop {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    z-index: 1;
-}
-
-.pd-glow-1 {
-    position: absolute;
-    width: 600px;
-    height: 600px;
-    border: 1px solid rgba(218, 174, 45, 0.08);
-    border-radius: 50%;
-    top: 50px;
-    right: -280px;
-    filter: blur(4px);
-}
-
-.pd-glow-2 {
-    position: absolute;
-    width: 450px;
-    height: 450px;
-    border: 1px solid rgba(218, 174, 45, 0.06);
-    border-radius: 50%;
-    bottom: 50px;
-    left: -200px;
-    filter: blur(4px);
-}
-
-.pd-grid-lines {
-    position: absolute;
-    inset: 0;
-    background-image: 
-        linear-gradient(rgba(218, 174, 45, 0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(218, 174, 45, 0.03) 1px, transparent 1px);
-    background-size: 60px 60px;
-    opacity: 0.7;
-}
-
-.presentation-container {
-    position: relative;
-    z-index: 2;
-    max-width: 1300px;
+    padding: 3rem 1.5rem 4rem;
+    max-width: 80rem;
     margin: 0 auto;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
+    gap: 3rem;
 }
 
-/* =========================================================
-   WORLD OF HAPPI ECOSYSTEM FULL PAGE STYLES
-   ========================================================= */
-
-.happi-ecosystem-wrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
-    width: 100%;
-}
-
-.happi-hero-section {
+/* Title Section */
+.asat-title-header {
     text-align: center;
-    padding: 30px 20px 20px;
-    max-width: 900px;
-    margin: 0 auto;
+}
+
+.asat-main-title {
+    font-size: clamp(2.2rem, 5vw, 3.75rem);
+    font-weight: 900;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+.section-label-bar {
+    width: 100%;
+    text-align: center;
+}
+
+.section-mono-tag {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.4em;
+    font-family: monospace, monospace;
+    color: #a3a3a3;
+}
+
+/* 4 Products Grid */
+.asat-products-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 1.5rem;
+    max-width: 64rem;
+}
+
+@media (min-width: 768px) {
+    .asat-products-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+.asat-product-card {
+    border: 1px solid #262626;
+    background-color: rgba(10, 10, 10, 0.4);
+    border-radius: 1rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: border-color 0.3s ease;
+}
+
+.asat-product-card:hover {
+    border-color: #ffffff;
+}
+
+.sub-product-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin-bottom: 0.75rem;
+    transition: transform 0.3s ease;
+}
+
+.asat-product-card:hover .sub-product-title {
+    transform: translateX(4px);
+}
+
+.sub-product-lines {
+    font-size: 0.85rem;
+    color: #a3a3a3;
+    font-weight: 300;
+    line-height: 1.625;
+}
+
+.card-actions-bar {
+    padding-top: 1.5rem;
+    margin-top: 1.5rem;
+    border-top: 1px solid #171717;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.btn-pill-outline {
+    flex: 1;
+    padding: 0.625rem 1rem;
+    border-radius: 9999px;
+    border: 1px solid #262626;
+    background: transparent;
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    text-align: center;
+    transition: border-color 0.2s ease;
+}
+
+.btn-pill-outline:hover {
+    border-color: #ffffff;
+}
+
+.btn-pill-filled {
+    flex: 1;
+    padding: 0.625rem 1rem;
+    border-radius: 9999px;
+    background: #ffffff;
+    color: #000000;
+    font-weight: 700;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    text-align: center;
+    border: none;
+    transition: background-color 0.2s ease;
+}
+
+.btn-pill-filled:hover {
+    background-color: #e5e5e5;
+}
+
+/* Structure Section */
+.asat-structure-section {
+    width: 100%;
+    max-width: 64rem;
+    padding-top: 4rem;
+    border-top: 1px solid #171717;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.structure-tree-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem 0;
+    gap: 1.5rem;
+}
+
+.tree-node {
+    border: 1px solid #262626;
+    background-color: rgba(10, 10, 10, 0.6);
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    text-align: center;
+}
+
+.tree-node span {
+    font-size: 0.8rem;
+    font-family: monospace, monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.tree-connector-down {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.line-v {
+    width: 1px;
+    height: 1.5rem;
+    background-color: #404040;
+}
+
+.line-v.short-v {
+    height: 1.5rem;
+}
+
+.arrow-head {
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 4px solid #404040;
+}
+
+.tree-branch-wrapper {
+    width: 100%;
+    max-width: 42rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.line-h-connector {
+    width: 100%;
+    height: 1px;
+    background-color: #404040;
+}
+
+@media (max-width: 639px) {
+    .line-h-connector {
+        display: none;
+    }
+}
+
+.tree-children-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    width: 100%;
+    max-width: 56rem;
+    padding-top: 0.5rem;
+}
+
+@media (min-width: 640px) {
+    .tree-children-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
+.tree-child {
+    background-color: rgba(10, 10, 10, 0.3);
+    padding: 1rem;
+    position: relative;
+}
+
+.top-vertical-pin {
+    position: absolute;
+    top: -1rem;
+    left: 50%;
+    width: 1px;
+    height: 1rem;
+    background-color: #404040;
+}
+
+@media (max-width: 639px) {
+    .top-vertical-pin {
+        display: none;
+    }
+}
+
+/* Detail Sub-page View */
+.back-btn-wrapper {
+    width: 100%;
+}
+
+.btn-back-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    font-family: monospace, monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #a3a3a3;
+    border: 1px solid #262626;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    background: transparent;
+    cursor: pointer;
+    transition: color 0.2s, border-color 0.2s;
+}
+
+.btn-back-pill:hover {
+    color: #ffffff;
+    border-color: #ffffff;
+}
+
+.detail-about-card {
+    border: 1px solid #171717;
+    background-color: rgba(10, 10, 10, 0.2);
+    padding: 2rem;
+    border-radius: 1.5rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.about-paragraphs-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    color: #d4d4d4;
+    font-weight: 300;
+    font-size: 0.9rem;
+    line-height: 1.625;
+}
+
+/* Journey Timeline */
+.detail-timeline-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.vertical-timeline-conduit {
+    position: relative;
+    border-left: 1px solid #262626;
+    margin-left: 1.25rem;
+    padding-left: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+}
+
+.timeline-step-item {
+    position: relative;
+}
+
+.step-circle-pin {
+    position: absolute;
+    left: -2.5rem;
+    top: 0.15rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: #000000;
+    border: 1px solid #525252;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-family: monospace, monospace;
+    font-weight: 700;
+    color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.step-content-body {
+    padding-left: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.step-header-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.step-title {
+    font-size: 1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #ffffff;
+    margin: 0;
+}
+
+.period-badge {
+    font-size: 0.65rem;
+    font-family: monospace, monospace;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #a3a3a3;
+    background-color: rgba(15, 15, 15, 0.9);
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.25rem;
+    border: 1px solid #262626;
+}
+
+.step-desc {
+    font-size: 0.85rem;
+    color: #a3a3a3;
+    font-weight: 300;
+    line-height: 1.65;
+    margin: 0;
+}
+
+/* Footer & Toast */
+.asat-footer {
+    width: 100%;
+    border-top: 1px solid #171717;
+    padding: 2rem 1.5rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    font-family: monospace, monospace;
+    color: #737373;
+}
+
+.footer-origin {
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: #a3a3a3;
+}
+
+.toast-notification-pill {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    z-index: 50;
+    background-color: #ffffff;
+    color: #000000;
+    padding: 0.625rem 1.25rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 }
 
 .happi-badge-pill {

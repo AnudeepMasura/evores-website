@@ -1,7 +1,7 @@
 .hero {
     position: relative;
     min-height: 100vh;
-    background: var(--black);
+    background: #000000;
     color: white;
     display: flex;
     align-items: center;
@@ -23,7 +23,7 @@
     position: absolute;
     border-radius: 50%;
     filter: blur(90px);
-    opacity: 0.18;
+    opacity: 0.12;
 }
 
 .glow-orb-1 {
@@ -42,44 +42,10 @@
     left: 5%;
 }
 
-.hero-grid-overlay {
-    position: absolute;
-    inset: 0;
-    background-image: 
-        linear-gradient(rgba(218, 174, 45, 0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(218, 174, 45, 0.04) 1px, transparent 1px);
-    background-size: 60px 60px;
-    mask-image: radial-gradient(circle at 50% 50%, black 30%, transparent 80%);
-    -webkit-mask-image: radial-gradient(circle at 50% 50%, black 30%, transparent 80%);
-}
-
 .hero-container {
     position: relative;
     z-index: 2;
-}
-
-.hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: rgba(218, 174, 45, 0.08);
-    border: 1px solid rgba(218, 174, 45, 0.25);
-    padding: 8px 18px;
-    border-radius: 30px;
-    color: var(--gold);
-    font-size: 0.8rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    margin-bottom: 30px;
-    text-transform: uppercase;
-}
-
-.badge-dot {
-    width: 8px;
-    height: 8px;
-    background: var(--gold);
-    border-radius: 50%;
-    box-shadow: 0 0 10px var(--gold);
+    max-width: 1200px;
 }
 
 .hero-title {
@@ -105,14 +71,6 @@
     line-height: 1.8;
 }
 
-.hero-line-glow {
-    width: 120px;
-    height: 4px;
-    background: linear-gradient(90deg, var(--gold), transparent);
-    margin-top: 40px;
-    border-radius: 2px;
-}
-
 @media (max-width: 767px) {
     .hero {
         padding-top: 100px;
@@ -124,9 +82,5 @@
     }
     .hero-subtitle {
         font-size: 1.05rem;
-    }
-    .hero-badge {
-        font-size: 0.72rem;
-        padding: 6px 14px;
     }
 }

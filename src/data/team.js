@@ -1,32 +1,44 @@
-const teamMembers = [
+export const founders = [
   {
     id: 1,
-    name: "Heading",
-    role: "Role",
-    image: null,
-    bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    name: "Pranay Swaroop",
+    role: "CEO & Co-Founder",
+    image: null
   },
   {
     id: 2,
-    name: "Heading",
-    role: "Role",
-    image: null,
-    bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-  },
-  {
-    id: 3,
-    name: "Heading",
-    role: "Role",
-    image: null,
-    bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-  },
-  {
-    id: 4,
-    name: "Heading",
-    role: "Role",
-    image: null,
-    bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    name: "Muneender",
+    role: "CFO & Co-Founder",
+    image: null
   }
 ];
 
-export default teamMembers;
+export const teamMembers = [
+  {
+    id: 3,
+    name: "Mohan Siva Sai Vaibhav",
+    role: "Team Member",
+    image: null
+  },
+  {
+    id: 4,
+    name: "Jayanth",
+    role: "Team Member",
+    image: null
+  },
+  {
+    id: 5,
+    name: "Teja",
+    role: "Team Member",
+    image: null
+  },
+  {
+    id: 6,
+    name: "Naga Venkat Teja",
+    role: "Team Member",
+    image: null
+  }
+];
+
+const teamData = { founders, teamMembers };
+export default teamData;

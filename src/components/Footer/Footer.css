@@ -63,9 +63,9 @@
 
 .contact-item{
 
-    border-left:1px solid #444;
+    border-left:none;
 
-    padding-left:35px;
+    padding-left:0;
 
 }
 
@@ -105,11 +105,9 @@
 
     flex-direction:column;
 
-    justify-content:space-between;
+    justify-content:flex-start;
 
-    padding-top:205px;
-
-    padding-bottom:170px;
+    padding-top:130px;
 
 }
 
@@ -166,6 +164,20 @@
     color:var(--black);
 
     border-color:var(--gold);
+
+}
+
+.footer-bottom {
+
+    max-width:1400px;
+
+    width:95%;
+
+    margin:70px auto 0;
+
+    padding-top:30px;
+
+    border-top:1px solid rgba(255, 255, 255, 0.1);
 
 }
 
