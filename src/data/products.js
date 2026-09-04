@@ -1,7 +1,7 @@
 const products = [
   {
     id: 1,
-    title: "ASAT",
+    title: "ASAT (As Simple as That)",
     slug: "asat",
     sector: "Textile & Fashion",
     model: "Fashion marketplace that connects designers with fashion enthusiast",

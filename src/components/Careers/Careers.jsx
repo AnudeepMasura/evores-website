@@ -6,7 +6,7 @@ function Careers() {
       <div className="container">
 
         <h2 className="section-title">
-          Our <span>Careers.</span>
+          Our <span>Careers</span>
         </h2>
 
         <div className="text-block">
@@ -15,7 +15,7 @@ function Careers() {
           </p>
 
          <a href="mailto:evorestechnologysocial@gmail.com" className="career-btn">
-            Get In Touch →
+            Get In Touch
           </a>
         </div>
 

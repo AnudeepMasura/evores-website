@@ -8,7 +8,7 @@ function Products() {
       <div className="container">
 
         <h2 className="section-title">
-          Our <span>Products.</span>
+          Our <span>Products</span>
         </h2>
 
         <div className="products-grid">

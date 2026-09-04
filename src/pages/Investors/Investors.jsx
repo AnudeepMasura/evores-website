@@ -33,9 +33,6 @@ function Investors() {
         >
           <div className="journey-title-box">
             <h2>Our journey</h2>
-            <p className="journey-sub-text">
-              Building modular SaaS architecture and multi-sided digital ecosystems from India for global markets.
-            </p>
           </div>
 
           {/* Tree / Card Flowchart Structure */}
@@ -43,10 +40,10 @@ function Investors() {
             
             {/* Central Company Node */}
             <div className="tree-root-card glass-investor-card">
-              <div className="card-badge">PARENT PLATFORM</div>
+              <div className="card-badge">MAIN COMPANY</div>
               <h3>EvoRES Technology</h3>
               <p className="company-desc">
-                Serving as the primary technology foundation, powering cloud infrastructure, shared micro-services, and enterprise growth across all flagship product ecosystems.
+                EvoRES Technology LLP develops and operates next generation SaaS, PaaS, and AI-driven digital platforms across multiple industries. It incubates, builds, and manages flagship products including the World of Happi ecosystem and ASAT under one unified technology company.
               </p>
               <div className="company-meta">
                 <span>HQ: Vijayawada, AP, India</span>
@@ -78,15 +75,12 @@ function Investors() {
               
               {/* Happi Ecosystem Branch Card */}
               <div className="tree-branch-card glass-investor-card">
-                <div className="card-badge">MOBILITY ECOSYSTEM</div>
-                <h3>Happi Ecosystem</h3>
-                <p className="ecosystem-desc">
-                  Transportation &amp; gig worker platform connecting intracity rides (Happi Ride), intercity travel (Happi Journey), partner fleet management (Happi Rider's Crew), and gamified rewards (Happi Games).
-                </p>
+                <div className="card-badge">ONLINE ECOSYSTEM</div>
+                <h3>World of Happi</h3>
                 
                 <div className="card-action">
                   <Link to="/products/happi" className="learn-more-btn">
-                    Learn More →
+                    Learn More
                   </Link>
                 </div>
               </div>
@@ -94,14 +88,11 @@ function Investors() {
               {/* ASAT Ecosystem Branch Card */}
               <div className="tree-branch-card glass-investor-card">
                 <div className="card-badge">FASHION ECOSYSTEM</div>
-                <h3>ASAT</h3>
-                <p className="ecosystem-desc">
-                  Fashion technology platform connecting independent designers (Designers Paradise), fashion services (H&amp;S), virtual fitting solutions (FitX), and brand commerce platforms (Brand Hub).
-                </p>
+                <h3>ASAT (As Simple as That)</h3>
 
                 <div className="card-action">
                   <Link to="/products/asat" className="learn-more-btn">
-                    Learn More →
+                    Learn More
                   </Link>
                 </div>
               </div>

@@ -124,7 +124,7 @@ function ProductDetails() {
 
                   {/* Parent: As Simple as That */}
                   <div className="tree-node tree-parent">
-                    <span>AS SIMPLE AS THAT</span>
+                    <span>AS SIMPLE AS THAT [ASAT]</span>
                   </div>
 
                   {/* Branch Line Connector Down */}
@@ -147,10 +147,6 @@ function ProductDetails() {
 
             </main>
 
-            <footer className="asat-footer">
-              <p className="footer-origin">MADE IN VIJAYAWADA</p>
-              <p className="footer-copyright">© All rights reserved with EvoRES Technology LLP</p>
-            </footer>
           </motion.div>
         ) : (
 
@@ -211,11 +207,6 @@ function ProductDetails() {
               </div>
 
             </main>
-
-            <footer className="asat-footer">
-              <p className="footer-origin">MADE IN VIJAYAWADA</p>
-              <p className="footer-copyright">© All rights reserved with EvoRES Technology LLP</p>
-            </footer>
           </motion.div>
         )}
 

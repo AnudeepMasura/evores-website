@@ -1,6 +1,6 @@
 const productDetails = {
   asat: {
-    title: "As Simple as That",
+    title: "As Simple as That [ASAT]",
     slug: "asat",
     subtitle: "As Simple As That",
     logo: "/images/asat-logo.png",
@@ -12,14 +12,14 @@ const productDetails = {
         slug: "designer-paradise",
         name: "Designer Paradise",
         shortLines: [
-          "A curated design ecosystem for digital creators and visual architects.",
-          "Access pristine monochrome UI assets, grids, and typography systems.",
-          "Engineered for high-end creative expression without complexity."
+          "Designer Paradise is a creative marketplace where designers can showcase, sell, and grow their fashion and digital design collections.",
+          "It connects independent designers with customers through a modern, technology-driven platform that supports brand building and direct sales.",
+          "Built under the EvoRES ecosystem, Designer Paradise empowers creative talent with tools to launch, manage, and scale their businesses."
         ],
         para1:
-          "A curated design ecosystem built specifically for digital creators, visual architects, and aesthetic-driven brands. Designer Paradise eliminates clutter by providing pristine monochrome UI assets, modular grid systems, and rigorous typography hierarchies that empower high-end creative expression without friction.",
+          "Designer Paradise is a creative marketplace where designers can showcase, sell, and grow their fashion and digital design collections. It connects independent designers with customers through a modern, technology-driven platform that supports brand building and direct sales.",
         para2:
-          "Engineered with absolute minimalism at its core, the ecosystem scales effortlessly from rapid prototyping to full enterprise production design systems. Every asset is meticulously hand-crafted to maintain absolute geometric consistency and timeless visual appeal.",
+          "Built under the EvoRES ecosystem, Designer Paradise empowers creative talent with tools to launch, manage, and scale their businesses.",
         toastMsg: "Launching Designer Paradise client workspace instance...",
         timeline: [
           {
@@ -52,14 +52,14 @@ const productDetails = {
         slug: "brand-hub",
         name: "Brand Hub",
         shortLines: [
-          "Centralized command center for corporate identity and digital asset governance.",
-          "Keep brand guidelines synchronized across teams in real time securely.",
-          "Eliminate fragmentation with single-source asset synchronization."
+          "Brand Hub is a marketplace that helps brands grow from local markets to a global audience through one unified platform.",
+          "It connects businesses directly with customers, enabling brands to showcase, sell, and build lasting relationships without unnecessary intermediaries.",
+          "Built under the EvoRES ecosystem, Brand Hub empowers emerging and established brands with the tools to reach consumers at scale."
         ],
         para1:
-          "Centralized command center designed for corporate identity governance and digital asset synchronization. Brand Hub ensures every team member across departments has immediate, authorized access to current brand guidelines, typography packages, and official vector assets.",
+          "Brand Hub is a marketplace that helps brands grow from local markets to a global audience through one unified platform. It connects businesses directly with customers, enabling brands to showcase, sell, and build lasting relationships without unnecessary intermediaries.",
         para2:
-          "By removing version drift and fragmented design repositories, Brand Hub safeguards enterprise brand integrity in real-time, empowering global marketing teams to operate with total consistency and confidence.",
+          "Built under the EvoRES ecosystem, Brand Hub empowers emerging and established brands with the tools to reach consumers at scale.",
         toastMsg: "Launching Brand Hub secure enterprise portal...",
         timeline: [
           {
@@ -92,14 +92,14 @@ const productDetails = {
         slug: "hs",
         name: "H&S",
         shortLines: [
-          "Advanced health and safety protocol management for high-velocity teams.",
-          "Monitor environmental compliance and risk metrics effortlessly.",
-          "Streamline workplace safety reporting with automated black-box logs."
+          "H&S is a unisex Indian streetwear fashion brand created for Gen Z and the new generation of trendsetters.",
+          "It blends contemporary street culture with bold, comfortable, and expressive designs inspired by modern fashion trends.",
+          "Built under the EvoRES ecosystem, H&S delivers affordable, stylish collections made for everyday wear and global fashion enthusiasts."
         ],
         para1:
-          "Advanced health, safety, and environmental protocol management platform built for high-velocity industrial and digital teams. H&S monitors workplace compliance metrics and risk thresholds effortlessly.",
+          "H&S is a unisex Indian streetwear fashion brand created for Gen Z and the new generation of trendsetters. It blends contemporary street culture with bold, comfortable, and expressive designs inspired by modern fashion trends.",
         para2:
-          "Streamlining safety reporting with automated black-box logging and proactive incident forecasting, H&S ensures absolute operational security without cumbersome bureaucratic overhead.",
+          "Built under the EvoRES ecosystem, H&S delivers affordable, stylish collections made for everyday wear and global fashion enthusiasts.",
         toastMsg: "Launching H&S safety metrics dashboard...",
         timeline: [
           {
@@ -130,17 +130,17 @@ const productDetails = {
       },
       "fit-x": {
         slug: "fit-x",
-        name: "FiT-X",
+        name: "FiTX",
         shortLines: [
-          "Next-generation biometric tracking and high-performance physical analytics.",
-          "Optimize metabolic conditioning and recovery cycles with precision data.",
-          "Zero fluff fitness intelligence designed for peak human output."
+          "FiTX is a performance-focused fitness and sportswear brand designed for athletes, gym enthusiasts, and active lifestyles.",
+          "It creates high-quality apparel and accessories engineered for comfort, durability, and performance for both Indian and global audiences.",
+          "Built under the EvoRES ecosystem, FiTX combines innovation, style, and functionality to help people perform at their best every day."
         ],
         para1:
-          "Next-generation biometric tracking and high-performance physical analytics platform. FiT-X optimizes metabolic conditioning, training loads, and physiological recovery cycles with uncompromising precision.",
+          "FiTX is a performance-focused fitness and sportswear brand designed for athletes, gym enthusiasts, and active lifestyles. It creates high-quality apparel and accessories engineered for comfort, durability, and performance for both Indian and global audiences.",
         para2:
-          "Designed specifically for elite competitors and high-output professionals who demand zero fluff fitness intelligence backed by rigorous data science.",
-        toastMsg: "Launching FiT-X biometric portal...",
+          "Built under the EvoRES ecosystem, FiTX combines innovation, style, and functionality to help people perform at their best every day.",
+        toastMsg: "Launching FiTX biometric portal...",
         timeline: [
           {
             num: "1",
@@ -158,7 +158,7 @@ const productDetails = {
             num: "3",
             period: "late 2026",
             title: "the launch",
-            desc: "Launching the FiT-X analytics portal for high-performance athletic groups."
+            desc: "Launching the FiTX analytics portal for high-performance athletic groups."
           },
           {
             num: "4",

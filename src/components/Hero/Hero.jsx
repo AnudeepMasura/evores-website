@@ -25,12 +25,6 @@ function Hero() {
   return (
     <header className="hero">
 
-      {/* Subtle glowing ambient backdrop */}
-      <div className="hero-backdrop">
-        <div className="glow-orb glow-orb-1" />
-        <div className="glow-orb glow-orb-2" />
-      </div>
-
       <div className="container hero-container">
 
         <motion.div
@@ -45,7 +39,7 @@ function Hero() {
           </motion.h1>
 
           <motion.p className="hero-subtitle" variants={itemVariants}>
-            Evolving Research &amp; Engineering Solutions.
+            Evolving Research &amp; Engineering Solutions
           </motion.p>
 
         </motion.div>
