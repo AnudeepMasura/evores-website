@@ -30,8 +30,7 @@ function App() {
         <Route path="/" element={<Home />} />
 
         {/* Dedicated Ecosystem & Product detail routes */}
-        <Route path="/products/asat" element={<ProductDetails />} />
-        <Route path="/products/happi" element={<ProductDetails />} />
+        <Route path="/products" element={<ProductDetails />} />
         <Route path="/products/:slug" element={<ProductDetails />} />
         <Route path="/products/:slug/:subslug" element={<ProductDetails />} />
 

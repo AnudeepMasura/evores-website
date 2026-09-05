@@ -1,21 +1,24 @@
 import { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, useLocation, Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import productDetails from "../../data/productDetails";
 import "./ProductDetails.css";
 
 function ProductDetails() {
   const { slug } = useParams();
+  const location = useLocation();
   const [activeSubPage, setActiveSubPage] = useState(null);
   const [toastMessage, setToastMessage] = useState(null);
+
+  const pathSlug = location.pathname.split("/")[2];
+  const currentSlug = slug || pathSlug || "asat";
+  const productKey = currentSlug.toLowerCase();
+  const product = productDetails[productKey] || productDetails.asat;
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "instant" });
     setActiveSubPage(null);
-  }, [slug]);
-
-  const productKey = slug || "asat";
-  const product = productDetails[productKey] || productDetails.asat;
+  }, [currentSlug]);
 
   const triggerToast = (msg) => {
     setToastMessage(msg);
@@ -34,10 +37,10 @@ function ProductDetails() {
     window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   };
 
-  // Convert products object to array if it's an object (for ASAT) or handle fallback
+  // Convert products object to array if it's an object (for ASAT) or handle fallback (for Happi)
   const subProductsList = product.products
     ? Object.values(product.products)
-    : [];
+    : product.going?.products || [];
 
   return (
     <div className="asat-page-wrapper">
@@ -66,10 +69,13 @@ function ProductDetails() {
                 <h2 className="section-mono-tag">OUR PRODUCTS</h2>
               </div>
 
-              {/* 4 Sub-Products Grid */}
+              {/* Sub-Products Grid */}
               <div className="asat-products-grid">
-                {subProductsList.map((item) => (
-                  <div key={item.slug} className="asat-product-card">
+                {subProductsList.map((item, index) => (
+                  <div 
+                    key={item.slug || item.name} 
+                    className={`asat-product-card ${subProductsList.length === 5 && index === 4 ? "card-span-2" : ""}`}
+                  >
                     <div className="card-top-info">
                       <h3 className="sub-product-title">{item.name}</h3>
                       <p className="sub-product-lines">
@@ -80,30 +86,30 @@ function ProductDetails() {
                             {item.shortLines[2]}
                           </>
                         ) : (
-                          item.para1
+                          item.description || item.para1
                         )}
                       </p>
                     </div>
 
                     <div className="card-actions-bar">
                       <button
-                        onClick={() => handleOpenSubProduct(item)}
-                        className="btn-pill-outline"
-                      >
-                        LEARN MORE
-                      </button>
-                      <button
-                        onClick={() => triggerToast(item.toastMsg || `Launching ${item.name}...`)}
+                        onClick={() => {
+                          if (item.website && item.website !== "#") {
+                            window.open(item.website, "_blank");
+                          } else {
+                            triggerToast(item.toastMsg || `Launching ${item.name}...`);
+                          }
+                        }}
                         className="btn-pill-filled"
                       >
-                        VISIT WEBSITE
+                        {item.buttonText || "VISIT WEBSITE"}
                       </button>
                     </div>
                   </div>
                 ))}
               </div>
 
-              {/* Structure Section Added on Home Page */}
+              {/* Structure Section */}
               <div className="asat-structure-section">
                 <div className="section-label-bar">
                   <h2 className="section-mono-tag">STRUCTURE</h2>
@@ -122,21 +128,21 @@ function ProductDetails() {
                     <div className="arrow-head"></div>
                   </div>
 
-                  {/* Parent: As Simple as That */}
+                  {/* Parent: Product Ecosystem */}
                   <div className="tree-node tree-parent">
-                    <span>AS SIMPLE AS THAT [ASAT]</span>
+                    <span>{(product.title || "AS SIMPLE AS THAT [ASAT]").toUpperCase()}</span>
                   </div>
 
                   {/* Branch Line Connector Down */}
-                  <div className="tree-branch-wrapper">
+                  <div className={`tree-branch-wrapper ${subProductsList.length === 5 ? "grid-5-branch" : ""}`}>
                     <div className="line-v short-v"></div>
                     <div className="line-h-connector"></div>
                   </div>
 
-                  {/* 4 Children Products */}
-                  <div className="tree-children-grid">
+                  {/* Children Products */}
+                  <div className={`tree-children-grid ${subProductsList.length === 5 ? "grid-5" : ""}`}>
                     {subProductsList.map((item) => (
-                      <div key={item.slug} className="tree-node tree-child">
+                      <div key={item.slug || item.name} className="tree-node tree-child">
                         <div className="top-vertical-pin"></div>
                         <span>{item.name}</span>
                       </div>

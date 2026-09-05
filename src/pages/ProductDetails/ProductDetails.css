@@ -111,17 +111,16 @@
 }
 
 .card-actions-bar {
-    padding-top: 1.5rem;
-    margin-top: 1.5rem;
-    border-top: 1px solid #171717;
+    padding-top: 1.25rem;
+    margin-top: 1.25rem;
+    border-top: none;
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    justify-content: center;
 }
 
 .btn-pill-outline {
-    flex: 1;
-    padding: 0.625rem 1rem;
+    padding: 0.625rem 1.5rem;
     border-radius: 9999px;
     border: 1px solid #262626;
     background: transparent;
@@ -140,8 +139,7 @@
 }
 
 .btn-pill-filled {
-    flex: 1;
-    padding: 0.625rem 1rem;
+    padding: 0.625rem 2rem;
     border-radius: 9999px;
     background: #ffffff;
     color: #000000;
@@ -152,19 +150,22 @@
     cursor: pointer;
     text-align: center;
     border: none;
-    transition: background-color 0.2s ease;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    display: inline-block;
+    text-decoration: none;
 }
 
 .btn-pill-filled:hover {
     background-color: #e5e5e5;
+    transform: translateY(-1px);
 }
 
 /* Structure Section */
 .asat-structure-section {
     width: 100%;
     max-width: 64rem;
-    padding-top: 4rem;
-    border-top: 1px solid #171717;
+    padding-top: 3rem;
+    border-top: none;
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -209,6 +210,11 @@
     align-items: center;
 }
 
+.tree-branch-wrapper.grid-5-branch {
+    width: 80%;
+    max-width: 51.2rem;
+}
+
 .line-v {
     width: 1.5px;
     height: 1.5rem;
@@ -239,6 +245,15 @@
     }
 }
 
+@media (min-width: 768px) {
+    .card-span-2 {
+        grid-column: span 2 / span 2;
+        max-width: 32rem;
+        margin: 0 auto;
+        width: 100%;
+    }
+}
+
 .tree-children-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -251,12 +266,19 @@
     .tree-children-grid {
         grid-template-columns: repeat(4, minmax(0, 1fr));
     }
+    .tree-children-grid.grid-5 {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        max-width: 64rem;
+    }
 }
 
 .tree-child {
     background-color: rgba(10, 10, 10, 0.3);
-    padding: 1rem;
+    padding: 1rem 0.5rem;
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .top-vertical-pin {

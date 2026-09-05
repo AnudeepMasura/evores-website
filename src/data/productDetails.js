@@ -173,45 +173,67 @@ const productDetails = {
 
   happi: {
     title: "World of Happi",
-    subtitle: "Transportation & Mobility Ecosystem",
+    subtitle: "Online Ecosystem for Consumers",
     logo: "/images/happi-logo.png",
     sector: "Online Ecosystem",
     overview:
-      "World of Happi is EvoRES Technology's mobility ecosystem connecting transportation, travel, gig workers, and digital mobility services into one unified, high-performance platform.",
-    started:
-      "The Happi ecosystem began with the vision of simplifying urban mobility and intercity transportation while creating sustainable earning opportunities and digital infrastructure for gig workers, drivers, and delivery partners.",
-    going: {
-      phase: "Phase 1 Ecosystem",
-      products: [
-        {
-          name: "Happi Rider's Crew",
-          description: "Gig worker management and partner fleet platform.",
-          website: "#",
-          slug: "happi-riders-crew",
-          tag: "GIG & FLEET PLATFORM"
-        },
-        {
-          name: "Happi Ride",
-          description: "Intracity ride booking and urban mobility solution.",
-          website: "#",
-          slug: "happi-ride",
-          tag: "INTRACITY MOBILITY"
-        },
-        {
-          name: "Happi Journey",
-          description: "Intercity travel, commuter transit, and long-haul solutions.",
-          website: "#",
-          slug: "happi-journey",
-          tag: "INTERCITY TRAVEL"
-        },
-        {
-          name: "Happi Games",
-          description: "Gamification, passenger engagement, and loyalty rewards platform.",
-          website: "#",
-          slug: "happi-games",
-          tag: "GAMIFICATION & REWARDS"
-        }
-      ]
+      "World of Happi is EvoRES Technology's ecosystem for consumers across the world which makes life simple and better with various services across different platforms.",
+    products: {
+      "happi-riders-crew": {
+        slug: "happi-riders-crew",
+        name: "Happi Rider's Crew",
+        shortLines: [
+          "Happi Rider's Crew is a workforce transportation platform designed for businesses, organizations, and institutions.",
+          "It provides safe, reliable, and scheduled employee commute solutions with smart fleet management and real-time trip tracking.",
+          "Built under the Happi ecosystem by EvoRES, it simplifies crew mobility while improving efficiency for employers and commuters."
+        ],
+        toastMsg: "Launching Happi Rider's Crew portal...",
+        buttonText: "View Product"
+      },
+      "happi-ride": {
+        slug: "happi-ride",
+        name: "Happi Ride",
+        shortLines: [
+          "Happi Ride is a smart mobility platform that connects passengers, drivers, and transport partners through one seamless ecosystem.",
+          "It offers intracity rides, intercity travel, bike and car rentals, parcel delivery, and business transportation services in a single app.",
+          "Built under the Happi ecosystem by EvoRES, Happi Ride is designed to make everyday travel affordable, reliable, and accessible for everyone."
+        ],
+        toastMsg: "Launching Happi Ride transit workspace...",
+        buttonText: "View Product"
+      },
+      "happi-journey": {
+        slug: "happi-journey",
+        name: "Happi Journey",
+        shortLines: [
+          "Happi Journey is a travel and booking platform that helps people plan, book, and manage their trips with ease.",
+          "It brings together flights, trains, buses, hotels, holiday packages, and travel experiences in one seamless platform.",
+          "Built under the Happi ecosystem by EvoRES, Happi Journey is designed to make travel simpler, smarter, and more accessible for Indian and global travelers."
+        ],
+        toastMsg: "Launching Happi Journey planner...",
+        buttonText: "View Product"
+      },
+      "happi-bites": {
+        slug: "happi-bites",
+        name: "Happi Bites",
+        shortLines: [
+          "Happi Bites is a food delivery and dining platform that connects customers with restaurants, cafés, cloud kitchens, and local food brands.",
+          "It offers food ordering, takeaway, table reservations, grocery-ready meal options, and a seamless dining experience through one app.",
+          "Built under the Happi ecosystem by EvoRES, Happi Bites is designed to make delicious food fast, affordable, and accessible while helping local food businesses grow."
+        ],
+        toastMsg: "Launching Happi Bites utilities...",
+        buttonText: "View Product"
+      },
+      "happi-games": {
+        slug: "happi-games",
+        name: "Happi Games",
+        shortLines: [
+          "Happi Games is a gaming and entertainment platform designed for children, families, casual players, and competitive gamers.",
+          "It combines fun games, educational experiences, interactive learning, and child development activities to support both entertainment and healthy growth.",
+          "Built under the Happi ecosystem by EvoRES, Happi Games creates a safe and engaging digital space where children can learn, play, and grow while gamers enjoy immersive experiences."
+        ],
+        toastMsg: "Launching Happi Games portal...",
+        buttonText: "View Product"
+      }
     }
   }
 };

@@ -49,14 +49,18 @@ function Footer() {
             <div className="social-links">
 
               <a
-                href="#"
+                href="https://www.linkedin.com/in/evores-technology/"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="LinkedIn"
               >
                 <FaLinkedinIn size={16} />
               </a>
 
               <a
-                href="#"
+                href="https://www.instagram.com/evores_technology_official?igsi=MTF2dnB6YzRjZGFiOA=="
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Instagram"
               >
                 <FaInstagram size={18} />

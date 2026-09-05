@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./Careers.css";
 
 function Careers() {
@@ -14,9 +15,9 @@ function Careers() {
             We are constantly seeking brilliant minds to join our corporate journey.
           </p>
 
-         <a href="mailto:evorestechnologysocial@gmail.com" className="career-btn">
-            Get In Touch
-          </a>
+          <Link to="/careers" className="career-btn">
+            View More
+          </Link>
         </div>
 
       </div>
