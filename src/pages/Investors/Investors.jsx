@@ -40,7 +40,7 @@ function Investors() {
             
             {/* Central Company Node */}
             <div className="tree-root-card glass-investor-card">
-              <div className="card-badge">COMPANY</div>
+              <div className="card-badge">MAIN</div>
               <h3>EvoRES Technology</h3>
               <p className="company-desc">
                 EvoRES Technology LLP develops and operates next generation SaaS, PaaS, and AI-driven digital platforms across multiple industries. It incubates, builds, and manages flagship products including the World of Happi ecosystem and ASAT under one unified technology company.
