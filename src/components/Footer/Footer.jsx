@@ -75,11 +75,11 @@ function Footer() {
       </div>
 
       {/* Bottom Copyright Row */}
-      <div className="footer-bottom">
-        <div className="copyright">
-          © 2026 EvoRES Technology LLP
-        </div>
-      </div>
+<div className="footer-bottom">
+  <div className="copyright">
+    © 2026 EvoRES Technology LLP
+  </div>
+</div>
 
     </footer>
   );
