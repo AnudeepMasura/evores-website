@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { HiMenu, HiX } from "react-icons/hi";
 import "./Navbar.css";
+import evoreLogo from "../../assets/evores-logo.png";
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);

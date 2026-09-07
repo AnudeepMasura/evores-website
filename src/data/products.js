@@ -5,9 +5,9 @@ const products = [
     slug: "asat",
     sector: "Textile & Fashion",
     model: "Fashion marketplace that connects designers with fashion enthusiast",
-    image: "/images/asat-logo.png",
+    image: "/images/ASAT logo.png",
     description: "Fashion ecosystem developed by EvoRES.",
-    website: "https://designersparadise.com",
+    website: "#",
     featured: true
   },
   {
@@ -16,7 +16,7 @@ const products = [
     slug: "happi",
     sector: "Online Ecosystem",
     model: "online ecosystem for consumers",
-    image: "/images/happi-logo.png",
+    image: "/images/Happi logo.png",
     description: "online ecosystem for consumers across the world which makes life simple and better with various services with different platforms",
     website: "#",
     featured: true

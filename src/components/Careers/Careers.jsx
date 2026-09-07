@@ -12,7 +12,7 @@ function Careers() {
 
         <div className="text-block">
           <p>
-            We are constantly seeking brilliant minds to join our corporate journey.
+            We are seeking brilliant minds to join our corporate journey.
           </p>
 
           <Link to="/careers" className="career-btn">
