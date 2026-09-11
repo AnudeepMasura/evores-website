@@ -27,7 +27,7 @@ function Footer() {
 
             <div className="contact-item">
               <span>CORRESPONDENCE</span>
-              <p>evorestechnologysocial@gmail.com</p>
+              <p>contact@evorestechnology.com </p>
             </div>
 
             <div className="contact-item">

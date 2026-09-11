@@ -1,8 +1,5 @@
 import { motion } from "framer-motion";
-
 import "./Hero.css";
-
-import evoreLogo from "../../assets/evores-logo.png";
 
 function Hero() {
   const containerVariants = {
@@ -52,16 +49,16 @@ function Hero() {
 
         {/* Evores Logo */}
         <motion.div
-          className="hero-logo"
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.3 }}
-        >
-          <img
-            src={evoreLogo}
-            alt="Evores logo"
-          />
-        </motion.div>
+  className="hero-logo"
+  initial={{ opacity: 0, scale: 0.9 }}
+  animate={{ opacity: 1, scale: 1 }}
+  transition={{ duration: 1, delay: 0.3 }}
+>
+  <img
+    src="/images/evores-logo.png"
+    alt="EvoRES logo"
+  />
+</motion.div>
 
       </div>
     </header>
